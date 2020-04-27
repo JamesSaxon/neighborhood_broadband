@@ -8,6 +8,14 @@ import json
 import netrc
 import glob
 import pandas as pd
+import geopandas as gpd
+
+import gpxpy
+from shapely.geometry import Point
+from fiona.crs import from_epsg
+
+import pytz
+import datetime
 
 
 def scan_addresses():
@@ -47,7 +55,7 @@ def scan_addresses():
     return addresses
     
     
-def get_location(addresses):
+def get_location_google(addresses):
 
     # Get a Google API Key
     _, _, api_key = netrc.netrc().authenticators("google-location")
@@ -58,6 +66,57 @@ def get_location(addresses):
     resp = resp.json()
     
     return resp
+
+
+def gdf_from_gpx(folder = "traces/"):
+
+    time, points = [], []
+
+    for f in glob.glob(folder + "/*"):
+        
+        with open(f) as trace:
+            gpx = gpxpy.parse(trace)
+
+        for track in gpx.tracks:
+            for segment in track.segments:
+                for point in segment.points:
+                    time.append([point.time])
+                    points.append(Point(point.longitude, point.latitude))
+
+
+    df = pd.DataFrame(columns = ["time"], data = time)
+    gs = gpd.GeoSeries(data = points, crs = from_epsg(4326))
+
+    gdf = gpd.GeoDataFrame(geometry = gs, data = df)
+    
+    gdf.time = gdf.time.dt.tz_convert("UTC")
+    
+    return gdf
+
+
+trace_gdf = None
+def get_location_traces(f, max_dt = 3, folder = "traces/"):
+
+    global trace_gdf
+    if trace_gdf is None:
+        trace_gdf = gdf_from_gpx(folder)
+        
+    ts = int(os.path.getmtime(f))
+    dt = datetime.datetime.fromtimestamp(ts, pytz.timezone('UTC'))
+    
+    for dt_match in range(max_dt):
+        
+        trace_match = abs(trace_gdf.time - dt).astype('timedelta64[s]') < dt_match
+
+        if trace_match.any():
+
+            loc = trace_gdf[trace_match].iloc[0].geometry.coords[0]
+            
+            location = {"lat" : loc[1], "lon" : loc[0]}
+            return location
+
+    return None
+
 
 
 def get_scan_number(folder = "scans"):
@@ -114,24 +173,35 @@ def scan(locate = False):
 
 def locate_scans(folder = "scans"):
         
+
     for f in glob.glob(folder + "/[0-9][0-9][0-9][0-9][0-9].json"):
-
+        
         fi = int(re.sub(r"scans/([0-9]{5}).json", r"\1", f))
-
+    
         with open(f) as obj: data = json.load(obj)
-
         if "lat" in data.keys(): continue
+            
+        if not len(data["bssid"]): 
+            os.remove(f)
+            continue
+        
+        location = get_location_traces(f)
+        
+        if location:
+            
+            data["lat"] = location["lat"]
+            data["lon"] = location["lon"]
 
-        location = get_location(data["bssid"])
+        else: # location not available as trace, so go to google.
 
-        data["acc"] = location["accuracy"]
-        data["lat"] = location["location"]["lat"]
-        data["lon"] = location["location"]["lng"]
-
+            location = get_location_google(data["bssid"])
+    
+            data["acc"] = location["accuracy"]
+            data["lat"] = location["location"]["lat"]
+            data["lon"] = location["location"]["lng"]
+    
         write_scan(data, scan_number = fi)
 
-    
-    
     
     
 if __name__ == "__main__": 
