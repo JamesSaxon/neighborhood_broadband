@@ -1,5 +1,25 @@
 # Kali / Kismet Approach 
 
+## HW
+
+### Parts
+1. Compute: raspberry pi 4 w/ 4 GB RAM
+2. GPS: GlobalSat BU-353-S4 USB dongle
+3. Wifi: Alfa AWUS036ACH -- Long-Range / Dual Band
+4. USB: AUKEY powered hub
+   * The Alfa munches power and interferes with the GPS!
+5. Power: Omni 20+
+   * This is not a cheap or sustainable solution, but it makes the power problem "trivial"
+     for once, which is a blessing...
+
+### Cabling -- 
+* pi draws power directly from the omni USB C
+* GPS plugs directly to the pi
+* Hub uses the Omni "wall plug"
+* Wifi uses the Hub -- this isolates it from the GPS, which otherwise just loses its fix continuously!
+
+## OS / Software
+
 * Get the rpi4 64 bit Kali install from Offensive Security.
 * Use dd or etcher (lower stress!) to write the medium.
 * `sudo apt install sqlite3 kismet gpsd gpsd-clients`
