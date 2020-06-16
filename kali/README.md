@@ -11,7 +11,7 @@
   * In the future, this should boot at launch if the USB is plugged in.
 * Use `airmon-ng check kill` to turn off services that interfere with scanning.
 * Try `sudo airodump-ng wlan1 -b abg -w piscan -e` to hop on A/B/G and write to `piscan-*`
-  * This seems really great, but it `airodump-ng` doesn't right the radiotap to the pcap file.
+  * This seems really great, but it `airodump-ng` doesn't write the radiotap to the pcap file.
   * Nevertheless, you could extract the beacon packets like so:
     ```
     tshark -r piscan-01.cap -Y "wlan.fc.type_subtype == 0x8" -T fields -e frame.time -e wlan.bssid -e wlan.ssid -E separator=,`
