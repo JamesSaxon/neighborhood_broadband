@@ -3,10 +3,12 @@
 * Get the rpi4 64 bit Kali install from Offensive Security.
 * Use dd or etcher (lower stress!) to write the medium.
 * `sudo apt install sqlite3 kismet gpsd gpsd-clients`
-  * Test using `cpgs -s`.
 * Copy the `gpsd.conf` file to `/etc/defaults/gpsd`
   * Do `sudo systemctl stop gpsd.socket` and `sudo systemctl disable gpsd.socket`
   * Necessary?
+* Start it this time using `sudo gpsd /dev/ttyUSB0`
+  * Test using `cpgs -s`.
+  * In the future, this should boot at launch if the USB is plugged in.
 * Use `airmon-ng check kill` to turn off services that interfere with scanning.
 * Try `sudo airodump-ng wlan1 -b abg -w piscan -e` to hop on A/B/G and write to `piscan-*`
   * This seems really great, but it `airodump-ng` doesn't right the radiotap to the pcap file.
