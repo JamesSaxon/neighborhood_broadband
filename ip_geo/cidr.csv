@@ -1,0 +1,781 @@
+DBA,Organization,CIDR
+AIC,Art Institute of Chicago,198.40.16.0/20
+ANIC,African Network Information Center,196.0.0.0/8
+ATT,AT&T Corp.,104.0.0.0/12
+ATT,AT&T Corp.,104.176.0.0/12
+ATT,AT&T Corp.,104.48.0.0/12
+ATT,AT&T Corp.,107.128.0.0/12
+ATT,AT&T Corp.,107.192.0.0/11
+ATT,AT&T Mobility LLC,107.224.0.0/11
+ATT,AT&T Mobility LLC,107.64.0.0/10
+ATT,AT&T Corp.,108.192.0.0/10
+ATT,AT&T Corp.,108.64.0.0/11
+ATT,"AT&T Services, Inc.",12.0.0.0/8
+ATT,"AT&T Services, Inc.",144.160.0.0/16
+ATT,AT&T Corp.,162.192.0.0/12
+ATT,AT&T Corp.,162.224.0.0/12
+ATT,AT&T Corp.,172.0.0.0/12
+ATT,Private Customer - AT&T Internet Services,172.125.35.0/29
+ATT,AT&T ANCS R&D Lab,206.121.128.0/21
+ATT,AT&T ANCS R&D Lab,206.121.136.0/22
+ATT,"AT&T Services, Inc.",207.140.218.0/23
+ATT,"AT&T Services, Inc.",207.141.160.0/20
+ATT,"AT&T Services, Inc.",207.242.84.0/22
+ATT,AT&T Corp.,23.112.0.0/12
+ATT,AT&T Corp.,2600:1700::/28
+ATT,AT&T Mobility LLC,2600:300::/24
+ATT,AT&T Corp.,2602:300::/24
+ATT,AT&T Corp.,45.16.0.0/12
+ATT,AT&T Corp.,65.42.0.0/15
+ATT,AT&T Corp.,68.248.0.0/13
+ATT,AT&T Corp.,68.72.0.0/14
+ATT,AT&T Corp.,68.76.0.0/15
+ATT,AT&T Corp.,68.78.0.0/16
+ATT,AT&T Corp.,69.148.0.0/14
+ATT,AT&T Corp.,69.152.0.0/14
+ATT,AT&T Corp.,69.210.128.0/17
+ATT,AT&T Corp.,69.211.0.0/16
+ATT,AT&T Corp.,69.212.0.0/14
+ATT,AT&T Corp.,69.216.0.0/13
+ATT,AT&T Corp.,69.224.0.0/14
+ATT,AT&T Corp.,69.228.0.0/15
+ATT,AT&T Corp.,69.230.0.0/17
+ATT,AT&T Corp.,69.230.128.0/18
+ATT,AT&T Corp.,69.231.192.0/18
+ATT,AT&T Corp.,69.232.0.0/15
+ATT,AT&T Corp.,69.234.0.0/17
+ATT,AT&T Corp.,69.234.128.0/18
+ATT,AT&T Corp.,70.132.128.0/17
+ATT,AT&T Corp.,70.132.64.0/18
+ATT,AT&T Corp.,70.133.0.0/16
+ATT,AT&T Corp.,70.134.0.0/15
+ATT,AT&T Corp.,70.136.0.0/13
+ATT,AT&T Corp.,70.225.0.0/16
+ATT,AT&T Corp.,70.226.0.0/15
+ATT,AT&T Corp.,70.228.0.0/14
+ATT,rback8c.akrnoh,70.228.112.0/20
+ATT,AT&T Corp.,70.232.0.0/18
+ATT,AT&T Corp.,70.232.128.0/17
+ATT,AT&T Corp.,70.233.0.0/16
+ATT,AT&T Corp.,70.234.0.0/15
+ATT,AT&T Corp.,70.240.128.0/17
+ATT,AT&T Corp.,70.241.0.0/16
+ATT,AT&T Corp.,70.242.0.0/15
+ATT,AT&T Corp.,70.244.0.0/14
+ATT,AT&T Corp.,70.248.0.0/15
+ATT,AT&T Corp.,70.250.0.0/16
+ATT,AT&T Corp.,70.251.0.0/18
+ATT,AT&T Corp.,71.128.0.0/15
+ATT,AT&T Corp.,71.130.0.0/16
+ATT,AT&T Corp.,71.131.0.0/17
+ATT,AT&T Corp.,71.131.128.0/18
+ATT,AT&T Corp.,71.137.128.0/17
+ATT,AT&T Corp.,71.137.64.0/18
+ATT,AT&T Corp.,71.138.0.0/15
+ATT,AT&T Corp.,71.140.0.0/16
+ATT,AT&T Corp.,75.16.0.0/14
+ATT,AT&T Corp.,75.20.0.0/15
+ATT,AT&T Corp.,75.22.0.0/17
+ATT,AT&T Corp.,75.22.128.0/18
+ATT,AT&T Corp.,75.23.0.0/16
+ATT,AT&T Corp.,75.24.0.0/13
+ATT,AT&T Corp.,75.3.192.0/18
+ATT,AT&T Corp.,75.32.0.0/13
+ATT,AT&T Corp.,75.4.0.0/14
+ATT,AT&T Corp.,75.40.0.0/14
+ATT,AT&T Corp.,75.44.0.0/16
+ATT,AT&T Corp.,75.45.0.0/17
+ATT,AT&T Corp.,75.47.192.0/18
+ATT,AT&T Corp.,75.48.0.0/12
+ATT,AT&T Corp.,75.8.0.0/13
+ATT,AT&T Corp.,76.192.0.0/14
+ATT,AT&T Corp.,76.196.0.0/16
+ATT,AT&T Corp.,76.197.0.0/17
+ATT,AT&T Corp.,76.197.192.0/18
+ATT,AT&T Corp.,76.198.0.0/15
+ATT,AT&T Corp.,76.200.0.0/14
+ATT,AT&T Corp.,76.204.0.0/16
+ATT,AT&T Corp.,76.205.0.0/18
+ATT,AT&T Corp.,76.205.128.0/17
+ATT,AT&T Corp.,76.206.0.0/15
+ATT,AT&T Corp.,76.208.0.0/15
+ATT,AT&T Corp.,76.210.0.0/16
+ATT,AT&T Corp.,76.211.128.0/17
+ATT,AT&T Corp.,76.211.64.0/18
+ATT,AT&T Corp.,76.212.0.0/14
+ATT,AT&T Corp.,76.216.0.0/14
+ATT,AT&T Corp.,76.220.0.0/15
+ATT,AT&T Corp.,76.222.0.0/16
+ATT,AT&T Corp.,76.223.192.0/18
+ATT,AT&T Corp.,76.224.0.0/13
+ATT,AT&T Corp.,76.232.0.0/14
+ATT,AT&T Corp.,76.236.0.0/15
+ATT,AT&T Corp.,76.241.128.0/17
+ATT,AT&T Corp.,76.242.0.0/15
+ATT,AT&T Corp.,76.244.0.0/14
+ATT,AT&T Corp.,76.248.0.0/14
+ATT,AT&T Corp.,76.252.128.0/17
+ATT,AT&T Corp.,76.252.64.0/18
+ATT,AT&T Corp.,76.253.0.0/16
+ATT,AT&T Corp.,76.254.0.0/16
+ATT,AT&T Corp.,76.255.0.0/18
+ATT,AT&T Corp.,76.255.128.0/17
+ATT,AT&T Corp.,99.0.0.0/13
+ATT,AT&T Corp.,99.10.128.0/17
+ATT,AT&T Corp.,99.10.64.0/18
+ATT,AT&T Corp.,99.104.0.0/16
+ATT,AT&T Corp.,99.105.0.0/17
+ATT,AT&T Corp.,99.105.192.0/18
+ATT,AT&T Corp.,99.106.0.0/15
+ATT,AT&T Corp.,99.108.0.0/14
+ATT,AT&T Corp.,99.11.0.0/16
+ATT,AT&T Corp.,99.112.0.0/12
+ATT,AT&T Corp.,99.12.0.0/14
+ATT,AT&T Corp.,99.128.0.0/13
+ATT,AT&T Corp.,99.136.0.0/14
+ATT,AT&T Corp.,99.140.0.0/16
+ATT,AT&T Corp.,99.141.128.0/17
+ATT,AT&T Corp.,99.142.0.0/15
+ATT,AT&T Corp.,99.144.0.0/17
+ATT,AT&T Corp.,99.144.128.0/18
+ATT,AT&T Corp.,99.145.0.0/16
+ATT,AT&T Corp.,99.146.0.0/15
+ATT,AT&T Corp.,99.148.0.0/15
+ATT,AT&T Corp.,99.151.192.0/18
+ATT,AT&T Corp.,99.152.0.0/14
+ATT,AT&T Corp.,99.156.0.0/17
+ATT,AT&T Corp.,99.156.128.0/18
+ATT,AT&T Corp.,99.157.0.0/16
+ATT,AT&T Corp.,99.158.0.0/15
+ATT,AT&T Corp.,99.16.0.0/12
+ATT,AT&T Corp.,99.160.0.0/12
+ATT,AT&T Corp.,99.176.0.0/14
+ATT,AT&T Corp.,99.180.0.0/16
+ATT,AT&T Corp.,99.181.0.0/18
+ATT,AT&T Corp.,99.181.128.0/17
+ATT,AT&T Corp.,99.182.0.0/15
+ATT,AT&T Corp.,99.184.0.0/13
+ATT,AT&T Corp.,99.32.0.0/11
+ATT,AT&T Corp.,99.64.0.0/13
+ATT,AT&T Corp.,99.72.0.0/15
+ATT,AT&T Corp.,99.74.0.0/16
+ATT,AT&T Corp.,99.75.0.0/17
+ATT,AT&T Corp.,99.75.128.0/18
+ATT,AT&T Corp.,99.8.0.0/15
+ATT,AT&T Corp.,99.82.192.0/18
+ATT,AT&T Corp.,99.83.0.0/18
+ATT,AT&T Corp.,99.87.192.0/18
+ATT,AT&T Corp.,99.88.0.0/13
+ATT,AT&T Corp.,99.96.0.0/13
+Access Media,"Access Media Holdings, LLC",216.195.224.0/19
+Access One,Network Device,96.47.133.0/30
+Access One,Network Device,96.47.139.0/30
+Alpine,ALPINE COMPUTERS,63.86.0.0/24
+American Heritage,American Heritage Life Insurance Company,198.207.185.0/24
+Call One,Call One Inc.,104.192.60.0/22
+CenturyLink,"CenturyLink Communications, LLC",63.144.0.0/13
+City of Chicago,City of Chicago,167.165.0.0/16
+Cloudflare,"Cloudflare, Inc.",8.6.144.0/24
+Comcast,"Comcast Cable Communications, LLC",107.0.0.0/14
+Comcast,"Comcast Cable Communications, LLC",107.4.0.0/15
+Comcast,"Comcast Cable Communications, LLC",162.17.0.0/18
+Comcast,"Comcast Cable Communications, LLC",173.15.0.0/17
+Comcast,"Comcast Cable Communications, LLC",173.161.0.0/17
+Comcast,"Comcast Cable Communications, LLC",173.165.0.0/17
+Comcast,"Comcast Cable Communications, LLC",173.167.128.0/18
+Comcast,"Comcast Cable Communications, LLC",173.9.192.0/18
+Comcast,"Comcast Cable Communications, LLC",198.0.240.0/20
+Comcast,Comcast Cable Communications,198.178.8.0/21
+Comcast,"Comcast Cable Communications, LLC",23.25.0.0/18
+Comcast,"Comcast Cable Communications, LLC",24.0.0.0/12
+Comcast,"Comcast Cable Communications, LLC",24.104.0.0/17
+Comcast,"Comcast Cable Communications, LLC",24.104.128.0/19
+Comcast,Comcast Cable Communications,24.12.0.0/14
+Comcast,"Comcast Cable Communications, LLC",2601:240::/26
+Comcast,"Comcast Cable Communications, LLC",50.128.0.0/9
+Comcast,"Comcast Cable Communications, LLC",50.73.96.0/19
+Comcast,"Comcast Cable Communications, LLC",50.76.0.0/14
+Comcast,"Comcast Cable Communications, LLC",50.76.240.0/20
+Comcast,"Comcast Cable Communications, LLC",50.76.64.0/19
+Comcast,"Comcast Cable Communications, LLC",50.77.128.0/18
+Comcast,"Comcast Cable Communications, LLC",50.79.112.0/20
+Comcast,"Comcast Cable Communications, Inc.",67.162.0.0/17
+Comcast,"Comcast Cable Communications, Inc.",67.163.0.0/18
+Comcast,"Comcast Cable Communications, IP Services",67.165.128.0/19
+Comcast,"Comcast Cable Communications, IP Services",67.165.160.0/19
+Comcast,"Comcast Cable Communications, IP Services",67.167.0.0/17
+Comcast,"Comcast Cable Communications, IP Services",67.167.192.0/18
+Comcast,"Comcast Cable Communications, IP Services",67.173.0.0/17
+Comcast,"Comcast Cable Communications, IP Services",67.173.128.0/18
+Comcast,"Comcast Cable Communications, Inc",67.175.0.0/17
+Comcast,"Comcast Cable Communications, Inc",67.175.128.0/17
+Comcast,"Comcast Cable Communications, Inc",67.176.128.0/17
+Comcast,"Comcast Cable Communications, Inc.",67.184.0.0/16
+Comcast,"Comcast Cable Communications, Inc.",67.186.64.0/18
+Comcast,"Comcast Cable Communications, Inc.",68.87.32.0/19
+Comcast,"Comcast Cable Communications, LLC",69.136.0.0/13
+Comcast,"Comcast Cable Communications, Inc",69.243.128.0/18
+Comcast,"Comcast Cable Communications, Inc",69.245.128.0/17
+Comcast,"Comcast Cable Communications, Inc.",69.246.192.0/18
+Comcast,"Comcast Cable Communications, LLC",70.88.64.0/21
+Comcast,"Comcast Cable Communications, LLC",70.88.72.0/21
+Comcast,"Comcast Cable Communications, LLC",70.88.86.0/23
+Comcast,"Comcast Cable Communications, LLC",70.89.212.0/22
+Comcast,"Comcast Cable Communications, LLC",70.89.216.0/21
+Comcast,"Comcast Cable Communications, LLC",70.90.120.0/21
+Comcast,"Comcast Cable Communications, LLC",70.91.240.0/20
+Comcast,"Comcast Cable Communications, LLC",70.91.96.0/20
+Comcast,"Comcast Cable Communications, Inc.",71.194.0.0/16
+Comcast,"Comcast Cable Communications, IP Services",71.201.0.0/16
+Comcast,"Comcast Cable Communications, Inc.",71.228.0.0/18
+Comcast,Comcast Cable Communications,71.239.0.0/16
+Comcast,"Comcast Cable Communications Holdings, Inc",71.57.0.0/17
+Comcast,"Comcast Cable Communications, LLC",73.0.0.0/8
+Comcast,"Comcast IP Services, L.L.C.",73.110.0.0/15
+Comcast,"Comcast Cable Communications, LLC",74.16.0.0/12
+Comcast,"Comcast Cable Communications, LLC",74.92.188.0/22
+Comcast,"Comcast Cable Communications, LLC",74.93.64.0/19
+Comcast,"Comcast Cable Communications, LLC",74.94.96.0/19
+Comcast,"Comcast Cable Communications, LLC",75.144.108.0/22
+Comcast,"Comcast Cable Communications, LLC",75.145.128.0/18
+Comcast,"Comcast Cable Communications, LLC",75.146.96.0/19
+Comcast,"Comcast Cable Communications, LLC",75.149.64.0/19
+Comcast,"Comcast Cable Communications, LLC",75.150.192.0/18
+Comcast,"Comcast Cable Communications, LLC",76.16.0.0/12
+Comcast,"Comcast Cable Communications, LLC",96.65.64.0/18
+Comcast,"Comcast Cable Communications, LLC",96.68.0.0/18
+Comcast,"Comcast Cable Communications, LLC",96.70.32.0/19
+Comcast,"Comcast Cable Communications, LLC",96.72.64.0/18
+Comcast,"Comcast Cable Communications, LLC",96.74.128.0/17
+Comcast,"Comcast Cable Communications, LLC",96.79.0.0/18
+Comcast,"Comcast Cable Communications, LLC",96.81.192.0/18
+Comcast,"Comcast Cable Communications, LLC",96.84.64.0/18
+Comcast,"Comcast Cable Communications, LLC",96.87.64.0/18
+Comcast,"Comcast Cable Communications, LLC",96.90.64.0/18
+Comcast,"Comcast Cable Communications, LLC",96.92.192.0/18
+Comcast,"Comcast Cable Communications, LLC",96.95.64.0/18
+Comcast,"Comcast Cable Communications, LLC",98.192.0.0/10
+Comcast,"Comcast Cable Communications, Inc.",98.226.0.0/15
+Comcast,"Comcast Cable Communications, Inc.",98.253.0.0/16
+Comcast,"Comcast Cable Communications, LLC",98.32.128.0/17
+Cox,Cox Communications,98.179.160.0/19
+Everywhere,"Everywhere Wireless, LLC",104.153.228.0/22
+Everywhere,"Everywhere Wireless, LLC",104.244.240.0/22
+Everywhere,"Everywhere Wireless, LLC",142.147.56.0/22
+Everywhere,"Everywhere Wireless, LLC",162.254.168.0/22
+Everywhere,"Everywhere Wireless, LLC",204.14.36.0/22
+F&C,FINN AND CONWAY,40.128.237.0/30
+Glenbrook SD,Glenbrook High School District,198.17.110.0/23
+Google,Google LLC,104.132.0.0/14
+Google,Google Fiber Inc.,136.32.0.0/11
+Google,Google LLC,209.107.176.0/20
+Google,Google LLC,35.208.0.0/12
+Google,Google LLC,35.224.0.0/12
+Google,Google LLC,35.240.0.0/13
+Google,"Google, LLC",64.9.224.0/19
+Home Depot,The Home Depot Inc.,207.11.0.0/17
+Hughes,Hughes Network Systems,184.52.0.0/15
+Hughes,Hughes Network Systems,67.142.0.0/15
+IANA,Internet Assigned Numbers Authority,0.0.0.0/8
+IANA,Internet Assigned Numbers Authority,10.0.0.0/8
+IANA,Internet Assigned Numbers Authority,100.64.0.0/10
+IANA,Internet Assigned Numbers Authority,169.254.0.0/16
+IANA,Internet Assigned Numbers Authority,172.16.0.0/12
+IANA,Internet Assigned Numbers Authority,192.0.0.0/29
+IANA,Internet Assigned Numbers Authority,192.168.0.0/16
+IANA,Internet Assigned Numbers Authority,240.0.0.0/4
+IANA,Internet Assigned Numbers Authority,FE80::/10
+ICN,Illinois Century Network,207.63.0.0/16
+ICN,Illinois Century Network,209.174.0.0/15
+ICN,Illinois Century Network,209.7.0.0/16
+ICN,Illinois Century Network,216.124.0.0/15
+ICN,Illinois Century Network,64.107.0.0/16
+ICN,Illinois Century Network,64.150.0.0/17
+ICN,Illinois Century Network,65.79.0.0/17
+ICN,Illinois Century Network,66.158.0.0/17
+ICN,Illinois Century Network,66.99.0.0/16
+IIT,Illinois Institute of Technology,104.194.96.0/19
+IIT,Illinois Institute of Technology,192.42.83.0/24
+IIT,Illinois Institute of Technology,216.47.128.0/19
+IIT,Illinois Institute of Technology,64.131.96.0/19
+Interlink,Interlink,66.138.160.0/19
+Jasper,Jasper Technologies Inc.,204.156.180.0/22
+Jasper,Jasper Wireless,208.184.162.0/24
+John Napolitano,JOHN NAPOLITANO,173.167.168.0/29
+Key Metric,"KEY METRIC SOFTWARE, LLC.",65.114.90.0/28
+L3,"Level 3 Parent, LLC",4.0.0.0/9
+L3,"Level 3 Parent, LLC",8.0.0.0/9
+Lightower,"Lightower Fiber Networks I, LLC",144.121.0.0/16
+Lion Resources,"LION RESOURCES, INC.",167.246.0.0/16
+Loyola,Loyola University Chicago,147.126.0.0/16
+Lurie,Ann & Robert H. Lurie Children's Hospital of Chicago,199.125.16.0/20
+MLB,"Major League Baseball Advanced Media, LP",199.76.96.0/21
+NW Community Hospital,Northwest Community Hospital,198.251.16.0/21
+NW Community Hospital,Northwest Community Hospital,198.251.24.0/22
+NW Community Hospital,Northwest Community Hospital,198.251.28.0/23
+NW Community Hospital,Northwest Community Hospital,198.251.30.0/24
+North Park University,North Park University,192.75.211.0/24
+Northshore,NorthShore University HealthSystem,204.26.16.0/20
+Northwestern,Northwestern University,165.124.0.0/16
+Northwestern,Northwestern University,8.28.178.0/23
+Northwestern Hospital,Northwestern Memorial Hospital,204.62.116.0/22
+OSI,OSI Group LLC,205.219.92.0/24
+OSI,OSI CHICAGO INC,23.25.57.0/29
+OnShore,"OnShore, Inc.",66.146.192.0/19
+PPoX,PPPoX Pool - rback2.bcvloh,70.238.240.0/20
+PSINet,"PSINet, Inc.",38.0.0.0/8
+Papa Johns,BAJCO DBA PAPA JOHNS - STORE # 3141,40.131.69.0/31
+Qwest,"Qwest Communications Company, LLC",65.151.128.0/18
+RCN,RCN,205.178.0.0/17
+RCN,RCN,207.181.192.0/18
+RCN,RCN,207.229.128.0/18
+RCN,RCN,207.237.0.0/16
+RCN,RCN,208.58.0.0/15
+RCN,RCN,216.80.0.0/17
+RCN,RCN,24.136.0.0/19
+RCN,RCN,24.148.0.0/18
+RCN,RCN,24.148.64.0/19
+RCN,RCN,65.79.128.0/19
+Remax,Remax Professionals,68.22.215.0/26
+Rush University MC,Rush University Medical Center,144.74.0.0/16
+SPC,Service Provider Corporation,166.128.0.0/9
+SecuredConnectivity,SecuredConnectivity.net,205.185.193.0/24
+SilverIP,SilverIP Communications Inc.,108.160.192.0/20
+SilverIP,SilverIP Communications Inc.,155.254.4.0/22
+SilverIP,SilverIP Communications Inc.,162.255.56.0/22
+SilverIP,SilverIP Communications Inc.,198.161.136.0/21
+SilverIP,SilverIP Communications Inc.,198.54.104.0/21
+Sirius,"Sirius Computer Solutions, Inc.",165.75.0.0/16
+Sprint,Sprint Chicago POP,173.141.128.0/17
+Sprint,"Sprint Communications, Inc.",174.144.0.0/12
+Sprint,Sprint,2600::/29
+Sprint,"Sprint Communications, Inc.",99.200.0.0/13
+Sprint,Sprint Akron POP,99.203.0.0/23
+Sprint,Sprint Chicago POP,99.203.14.0/23
+Sprint,Sprint Chicago POP,99.203.142.0/23
+Sprint,Sprint Chicago POP,99.203.200.0/23
+Sprint,Sprint Chicago POP,99.203.78.0/23
+Synergy Internet,Synergy Internet Services Florida,63.246.135.0/24
+T-Mobile,"T-Mobile USA, Inc.",162.160.0.0/11
+T-Mobile,"T-Mobile USA, Inc.",172.32.0.0/11
+T-Mobile,"T-Mobile USA, Inc.",208.54.0.0/17
+T-Mobile,"T-Mobile USA, Inc.",208.54.128.0/19
+T-Mobile,"T-Mobile USA, Inc.",2607:FB90::/28
+T-Mobile,"T-Mobile USA, Inc.",2607:FC20::/32
+UChicago,University of Chicago,128.135.0.0/16
+UChicago,University of Chicago,165.68.0.0/16
+UChicago,University of Chicago,192.5.84.0/22
+UIC,University of Illinois at Chicago,128.248.0.0/16
+UIC,University of Illinois at Chicago,131.193.0.0/16
+Verizon,Verizon Wireless,137.188.0.0/16
+Verizon,Cellco Partnership DBA Verizon Wireless,174.192.0.0/10
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",206.173.0.0/16
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",207.158.128.0/18
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",208.192.0.0/10
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",209.116.0.0/14
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",209.31.0.0/16
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",216.0.0.0/14
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",216.4.0.0/15
+Verizon,Cellco Partnership DBA Verizon Wireless,2600:1000::/28
+Verizon,Cellco Partnership DBA Verizon Wireless,2600:1010::/29
+Verizon,Cellco Partnership DBA Verizon Wireless,63.40.0.0/13
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",63.64.0.0/10
+Verizon,Verizon VCP,65.229.26.0/23
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",65.44.0.0/14
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",68.128.0.0/13
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",68.136.0.0/14
+Verizon,"MCI Communications Services, Inc. d/b/a Verizon Business",68.140.0.0/15
+Verizon,Cellco Partnership DBA Verizon Wireless,97.0.0.0/10
+VisionFriendly,VisionFriendly,144.121.168.0/29
+WOW,Wide Open West,23.28.168.0/21
+WOW,Wide Open West,23.28.218.0/24
+WOW,Wide Open West,24.192.229.0/24
+WOW,Wide Open West,24.192.80.0/21
+WOW,Wide Open West,24.192.96.0/21
+WOW,Wide Open West,50.4.128.0/23
+WOW,Wide Open West,50.4.134.0/24
+WOW,Wide Open West,50.4.135.0/24
+WOW,Wide Open West,50.4.136.0/21
+WOW,Wide Open West,64.233.230.0/23
+WOW,Wide Open West,64.53.128.0/22
+WOW,Wide Open West,64.53.132.0/23
+WOW,Wide Open West,64.53.135.0/24
+WOW,Wide Open West,64.53.143.0/24
+WOW,Wide Open West,64.53.148.0/23
+WOW,Wide Open West,64.53.150.0/23
+WOW,Wide Open West,64.53.152.0/23
+WOW,Wide Open West,64.53.156.0/24
+WOW,Wide Open West,64.53.160.0/23
+WOW,Wide Open West,64.53.163.0/24
+WOW,Wide Open West,64.53.180.0/24
+WOW,Wide Open West,64.53.193.0/24
+WOW,Wide Open West,64.53.194.0/23
+WOW,Wide Open West,64.53.196.0/22
+WOW,Wide Open West,64.53.200.0/22
+WOW,Wide Open West,64.53.204.0/22
+WOW,Wide Open West,64.53.208.0/21
+WOW,Wide Open West,65.60.191.0/24
+WOW,Wide Open West,67.149.140.0/22
+WOW,Wide Open West,67.149.211.0/24
+WOW,Wide Open West,67.149.227.0/24
+WOW,Wide Open West,67.149.48.0/22
+WOW,Wide Open West,67.149.52.0/23
+WOW,Wide Open West,67.149.54.0/23
+WOW,Wide Open West,69.47.0.0/21
+WOW,Wide Open West,69.47.10.0/23
+WOW,Wide Open West,69.47.100.0/22
+WOW,Wide Open West,69.47.144.0/21
+WOW,Wide Open West,69.47.184.0/21
+WOW,Wide Open West,69.47.203.0/24
+WOW,Wide Open West,69.47.204.0/22
+WOW,Wide Open West,69.47.208.0/21
+WOW,Wide Open West,69.47.224.0/24
+WOW,Wide Open West,69.47.24.0/22
+WOW,Wide Open West,69.47.240.0/21
+WOW,Wide Open West,69.47.248.0/21
+WOW,Wide Open West,69.47.28.0/22
+WOW,Wide Open West,69.47.32.0/21
+WOW,Wide Open West,69.47.40.0/23
+WOW,Wide Open West,69.47.44.0/22
+WOW,Wide Open West,69.47.72.0/21
+WOW,Wide Open West,69.47.8.0/23
+WOW,Wide Open West,69.47.88.0/23
+WOW,Wide Open West,69.47.92.0/23
+WOW,Wide Open West,74.199.37.0/24
+WOW,Wide Open West,75.118.106.0/23
+WOW,Wide Open West,75.118.144.0/21
+WOW,Wide Open West,75.118.176.0/21
+WOW,Wide Open West,75.118.216.0/21
+Wayport,"Wayport, Inc.",107.16.0.0/14
+Wayport,"Wayport, Inc.",64.134.0.0/16
+Wayport,"Wayport, Inc.",65.74.192.0/18
+Webpass,Webpass Inc.,136.30.0.0/18
+Webpass,Webpass Inc.,136.30.128.0/18
+Webpass,Webpass Inc.,136.30.192.0/18
+Webpass,Webpass Inc.,136.30.64.0/18
+WhiteSkye,"WhiteSky Communications, LLC.",52.124.32.0/20
+Windstream,Windstream Communications LLC,199.72.0.0/16
+Windstream,Windstream Communications LLC,199.96.144.0/21
+Windstream,Windstream Communications LLC,207.222.192.0/19
+Windstream,Windstream Communications LLC,209.152.192.0/19
+Windstream,Windstream Communications LLC,209.252.0.0/14
+Windstream,Windstream Communications LLC,216.172.16.0/20
+Windstream,Windstream Communications LLC,40.128.0.0/14
+Windstream,Windstream Communications LLC,40.132.0.0/16
+Windstream,Windstream Communications LLC,40.133.0.0/19
+Windstream,Windstream Communications LLC,40.133.128.0/17
+Windstream,Windstream Communications LLC,40.133.40.0/21
+Windstream,Windstream Communications LLC,40.133.48.0/20
+Windstream,Windstream Communications LLC,40.133.64.0/18
+Windstream,Windstream Communications LLC,40.134.0.0/15
+Windstream,Windstream Communications LLC,40.136.0.0/15
+Windstream,Windstream Communications LLC,40.138.0.0/17
+Windstream,Windstream Communications LLC,40.138.128.0/18
+Windstream,Windstream Communications LLC,40.138.192.0/20
+Windstream,Windstream Communications LLC,40.138.208.0/21
+Windstream,Windstream Communications LLC,40.138.216.0/22
+Windstream,Windstream Communications LLC,40.138.224.0/19
+Windstream,Windstream Communications LLC,40.139.0.0/16
+Windstream,Windstream Communications LLC,40.140.0.0/15
+Windstream,Windstream Communications LLC,40.142.0.0/21
+Windstream,Windstream Communications LLC,63.138.0.0/15
+,"Zscaler, Inc.",104.129.196.0/24
+,Eonix Corporation,104.140.0.0/16
+,YELP,104.153.227.0/24
+,Option Care,104.193.118.0/28
+,VPN Consumer Network,104.194.220.0/24
+,ServerHub New York,104.206.204.0/22
+,We Work,104.207.198.0/27
+,B2 Net Solutions Inc.,104.227.192.0/19
+,"Nexeon Technologies, Inc.",104.237.192.0/19
+,"Strong Technology, LLC.",104.238.38.0/24
+,M247,104.243.212.0/22
+,VPN Consumer Network,104.37.31.0/24
+,ServerHub Miami,107.158.144.0/22
+,IBM,129.33.244.0/22
+,IBM,129.33.248.0/21
+,RIPE Network Coordination Centre,131.227.0.0/16
+,RIPE Network Coordination Centre,131.228.0.0/16
+,Granite Telecommunications LLC,134.204.0.0/17
+,essensys Inc.,135.84.160.0/21
+,Kirkland & Ellis LLP,137.169.0.0/16
+,"Palo Alto Networks, Inc",137.83.192.0/18
+,B2 Net Solutions Inc.,138.128.0.0/17
+,Morgan Stanley Group Inc.,138.20.0.0/16
+,Depaul University,140.192.0.0/16
+,Mayer Brown LLP,143.58.0.0/16
+,WideOpenWest Finance LLC,143.59.0.0/16
+,RIPE Network Coordination Centre,144.176.0.0/14
+,RIPE Network Coordination Centre,144.180.0.0/15
+,Motorola Mobility LLC,144.188.0.0/16
+,"Kraft Foods Group, Inc.",146.236.0.0/16
+,"Gallagher Bassett Services, Inc.",151.147.0.0/16
+,"PriceWaterhouseCoopers, LLP",155.201.0.0/16
+,ARCELORMITTAL USA INC.,156.144.0.0/16
+,CNA,159.10.0.0/16
+,"Conversant, LLC",159.127.104.0/22
+,Crowe LLP,159.246.0.0/16
+,Cook County,162.217.184.0/22
+,Call One Inc.,162.220.192.0/21
+,COYOTE LOGISTICS LLC,162.247.248.0/22
+,"S-Net, Inc.",162.251.128.0/21
+,GTHost,162.251.60.0/22
+,Asia Pacific Network Information Centre,163.0.0.0/8
+,Adaptiv Networks Inc.,164.153.0.0/16
+,AON Corporation,165.125.0.0/16
+,"Zscaler, Inc.",165.225.0.0/24
+,"Zscaler, Inc.",165.225.57.0/24
+,"Zscaler, Inc.",165.225.60.0/24
+,"UNITED STATES CELLULAR TELEPHONE COMPANY (GREATER KNOXVILLE), L.P.",165.27.0.0/16
+,"W.W. Grainger, Inc.",167.115.0.0/16
+,Deloitte Services LP,167.219.0.0/19
+,Deloitte Services LP,167.219.32.0/20
+,Navistar International,167.6.0.0/16
+,"Nexeon Technologies, Inc.",167.88.0.0/20
+,Time Warner Enterprise Infrastructure Services LLC,168.161.0.0/16
+,C. H. Robinson Company,168.208.0.0/16
+,IVYTech Community College of Indiana,168.91.0.0/21
+,First Communications LLC,168.92.0.0/15
+,Jones Day,168.98.0.0/16
+,Eonix Corporation,170.130.0.0/16
+,"The Interpublic Group of Companies, Inc.",170.200.0.0/16
+,Trinity Information Services,170.232.0.0/16
+,Northeastern Illinois University,170.76.231.0/24
+,"Bank of America, National Association",171.128.0.0/10
+,"Bank of America, National Association",171.192.0.0/13
+,"Bank of America, National Association",171.200.0.0/14
+,"Bank of America, National Association",171.204.0.0/15
+,"Bank of America, National Association",171.206.0.0/16
+,Granite Telecommunications LLC,172.85.128.0/17
+,RML SPECIALTY HOSPITAL,172.87.49.0/27
+,Lawson Industries Inc,172.98.100.0/27
+,Peumansend Creek VA - Regional Jail,172.98.109.0/28
+,XL Broadband Inc.,172.98.220.0/22
+,TIMBUKTECH INC,173.165.103.0/29
+,Acts,173.205.106.0/30
+,"PayPal, Inc.",173.224.160.0/21
+,Puerto Rico Telephone Company,173.228.192.0/18
+,VPN Consumer Network,173.239.199.0/24
+,SecuredConnectivity.net,173.245.202.0/24
+,Schaefer,173.249.77.0/29
+,Latin American and Caribbean IP address Regional Registry,181.0.0.0/8
+,Metronet - Carrier Grade NAT Pool,184.170.166.0/25
+,RIPE Network Coordination Centre,185.0.0.0/8
+,Latin American and Caribbean IP address Regional Registry,186.0.0.0/8
+,Latin American and Caribbean IP address Regional Registry,187.0.0.0/8
+,Latin American and Caribbean IP address Regional Registry,191.0.0.0/8
+,"SMS Assist, L.L.C.",192.132.212.0/24
+,Kropp Equipment Inc,192.157.76.0/29
+,Roosevelt University,192.175.16.0/22
+,Roosevelt University,192.175.20.0/23
+,Meridian IT,192.175.57.0/25
+,Ferrara Candy Company,192.184.118.0/27
+,"Tribune Publishing Company, LLC",192.187.64.0/19
+,Telx,192.196.160.0/19
+,The John Marshall Law School,192.207.162.0/24
+,Oakton Community College,192.234.15.0/24
+,Oakton Community College,192.234.16.0/24
+,"Bigleaf Networks, Inc.",192.248.224.0/20
+,"Automatic Data Processing, Inc.",192.251.51.0/24
+,"Avant, Inc.",192.82.152.0/24
+,RIPE Network Coordination Centre,195.0.0.0/8
+,"EXPEDIA, INC",198.151.53.0/24
+,"Groupon, Inc.",198.167.129.0/24
+,Amtrak,198.212.199.0/24
+,Sidley and Austin,198.232.32.0/19
+,Commonwealth Edison Company,198.29.191.0/24
+,Zachs Investment,198.41.80.0/25
+,Motorola Mobility,198.41.83.0/24
+,Green Web,198.41.87.0/24
+,Green Web,198.41.89.0/24
+,Total Server Solutions L.L.C.,199.116.115.0/24
+,Wave Broadband,199.127.104.0/22
+,Innovative Networks LLC,199.15.128.0/21
+,American Medical Association,199.164.8.0/21
+,NETMINDERS DATA SOLUTION,199.167.136.0/22
+,Columbia College Chicago,199.168.232.0/21
+,"IMC-Chicago, LLC",199.168.44.0/22
+,Paylocity Corporation,199.175.106.0/23
+,"Wheels, Inc.",199.181.32.0/19
+,"S-Net, Inc.",199.182.208.0/21
+,TRINITY CHRISTIAN COLLEGE,199.188.160.0/21
+,KPMG LLP,199.206.0.0/15
+,Symantec Corporation,199.247.32.0/20
+,JPMorgan Chase & Co.,199.253.241.0/24
+,JPMorgan Chase & Co.,199.253.242.0/23
+,JPMorgan Chase & Co.,199.253.244.0/22
+,JPMorgan Chase & Co.,199.253.248.0/24
+,Sara Lee Corporation,199.30.0.0/20
+,SMW Autoblock,199.48.79.0/26
+,Metronet Carrier Grade NAT Pool,199.66.65.0/25
+,Metronet Carrier Grade NAT Pool,199.66.69.0/25
+,"Level 3 Parent, LLC",199.75.0.0/16
+,"Level 3 Parent, LLC",199.76.0.0/15
+,"Level 3 Parent, LLC",199.78.0.0/16
+,Illinois Tool Works,199.88.243.0/24
+,Marist High School,199.89.229.0/24
+,Latin American and Caribbean IP address Regional Registry,200.0.0.0/8
+,Latin American and Caribbean IP address Regional Registry,201.0.0.0/8
+,Shure Incorporated,204.124.148.0/22
+,MacNeal Hospital,204.126.150.0/23
+,"Salesforce.com, Inc.",204.14.232.0/21
+,ANS Communications,204.148.52.0/24
+,ConAgra Frozen Foods,204.76.64.0/18
+,Delaware Valley Financial Services,205.167.70.0/23
+,BlueCross BlueShield of Illinois,205.172.132.0/22
+,"Level 3 Parent, LLC",205.180.0.0/14
+,Chicago Board of Trade,205.209.192.0/19
+,HSBC Bank USA,205.214.176.0/20
+,"NTT America, Inc.",206.68.0.0/15
+,Beavers Lessee LLC,207.200.223.0/29
+,"DRIVE CONSTRUCTION, INC.",207.243.231.0/29
+,Mesirow Financial,207.252.173.0/24
+,"NETWORK INNOVATIONS, INC.",207.5.64.0/19
+,"tw telecom holdings, inc.",207.67.0.0/17
+,Zayo Bandwidth,208.184.0.0/15
+,"CenturyLink Communications, LLC",208.44.0.0/14
+,Sohonet Inc.,208.65.208.0/21
+,Landex research,208.73.132.0/27
+,McAllister Equipment Co,208.95.30.0/28
+,SecuredConnectivity.net,209.107.210.0/24
+,"SONIC.NET, INC.",209.148.96.0/19
+,TELUS Mobility-Ontario,209.171.88.0/24
+,"Alaska Communications Systems Group, Inc.",209.193.0.0/18
+,"DLS Internet Services, Inc",209.242.0.0/18
+,Zayo Bandwidth,209.249.0.0/16
+,e-vergent.com LLC,209.251.80.0/20
+,ACC-MILE NORTH HOTEL,209.36.145.0/24
+,TELUS Mobility-British Columbia,209.52.88.0/24
+,ACC-KERASOTES SHOWPLACE THEAT,209.64.168.0/29
+,"MINIAT HOLDINGS, LLC",209.65.10.0/27
+,FASTNET Corporation,209.92.162.0/23
+,FASTNET Corporation,209.92.164.0/24
+,BandCon,216.151.176.0/20
+,Krausonline.com,216.152.16.0/20
+,TEKsystems,216.152.96.0/20
+,M/A/R/C INC,216.158.176.0/20
+,"Granite & Marble Expressions, Inc.",216.159.247.0/29
+,NetNITCO,216.176.128.0/19
+,MetTel,216.194.0.0/18
+,Tinet,216.221.156.0/24
+,Career Education Corporation,216.49.208.0/20
+,LinkedIn Corporation,216.52.16.0/21
+,Private Customer,216.52.24.0/24
+,"Alaska Communications Systems Group, Inc.",216.67.0.0/17
+,B2 Net Solutions Inc.,23.229.96.0/20
+,CloudIP LLC,23.249.172.0/24
+,COMMUNITY ACTION PARTNERS,23.25.1.0/29
+,"Access Media Holdings, LLC",24.219.0.0/16
+,RIPE Network Coordination Centre,37.0.0.0/8
+,ZELLER REALTY,40.128.74.0/28
+,RIPE Network Coordination Centre,45.128.0.0/11
+,VPN Consumer Network,45.41.134.0/24
+,VPN Consumer Network,45.56.142.0/24
+,VPN Consumer Network,45.56.148.0/24
+,Strong Technology LLC,45.56.170.0/24
+,Strong Technology LLC,45.56.172.0/24
+,Strong Technology LLC,45.56.174.0/24
+,RIPE Network Coordination Centre,45.80.0.0/12
+,RIPE Network Coordination Centre,5.0.0.0/8
+,"Frontier Communications of America, Inc.",50.36.0.0/16
+,"Frontier Communications of America, Inc.",50.37.0.0/18
+,Macys Systems and Technology,50.59.32.0/22
+,NCH NORTHWEST COMMUNITY H,50.73.105.0/29
+,EXTREME REAC660 CHICAGO IL,50.76.77.0/29
+,ROGERS AUTO GROUP,50.77.130.0/28
+,MANAGED COMPUTER SERVICE,50.79.112.0/29
+,C Spire Wireless,50.86.48.0/21
+,Amazon Technologies Inc.,52.0.0.0/11
+,"Environmental Systems Design, Inc.",52.144.30.0/24
+,RIPE Network Coordination Centre,62.0.0.0/8
+,Tru Serv,63.126.66.0/24
+,CloudIP LLC,63.141.48.0/20
+,"CenturyLink Communications, LLC",63.232.0.0/14
+,RIPE Network Coordination Centre,63.246.128.0/22
+,RIPE Network Coordination Centre,63.246.132.0/23
+,Walgreens,63.73.199.0/24
+,Individual Account-L,63.84.94.0/29
+,"MARRIOTT INTERNATIONAL ADMINISTRATIVE SERVICES, INC.",63.85.171.0/26
+,"THOUSANDEYES, INC.",63.85.202.0/26
+,TOPCO,63.86.165.0/26
+,Zayo Bandwidth,64.124.0.0/15
+,Interactive Data Corporation,64.124.195.0/29
+,"Mainrock II Chantilly, LLC",64.124.222.0/28
+,BandCon,64.145.64.0/19
+,Private Customer,64.191.226.0/24
+,"Level 3 Parent, LLC",64.212.0.0/14
+,NordVPN (US),64.44.55.0/29
+,WideOpenWest Finance LLC,64.53.128.0/17
+,WIDEOPENWEST ILLINOIS,64.53.162.0/24
+,Heritage Hall,64.63.156.0/29
+,DOMA Technologies LLC,64.88.185.0/28
+,Sloan Valve,65.166.89.0/24
+,VIN-LEE RON MEAT PACKAGING,65.201.221.0/29
+,National Oppinion,65.213.192.0/24
+,Exobit Networks Inc.,65.254.0.0/19
+,McDonald's Corporation,66.111.128.0/18
+,"Trans Union, LLC",66.175.240.0/20
+,The Moody Bible Institute of Chicago,66.185.240.0/20
+,"Access Media Holdings, LLC",66.199.64.0/18
+,WIDE OPEN WEST,66.216.192.0/19
+,"Alaska Communications Systems Group, Inc.",66.230.80.0/20
+,"Alaska Communications Systems Group, Inc.",66.230.96.0/19
+,Commercial Land Title Insurance Co.,66.244.187.0/28
+,The Buckingham Chicago,66.253.187.0/24
+,Puerto Rico Telephone Company,66.50.0.0/16
+,Cogent Communications,66.71.224.0/20
+,E-Vergent,66.96.11.0/27
+,"RSM McGladrey, Inc.",66.98.96.0/20
+,MegaPath Corporation,67.100.0.0/14
+,"CenturyLink Communications, LLC",67.128.0.0/13
+,Sherri Kane,67.219.147.0/29
+,24 SHELLS,67.220.176.0/20
+,Puerto Rico Telephone Company,67.224.128.0/17
+,Judge & Dolph Ltd,67.36.40.0/25
+,"Plante & Moran, PLLC",67.59.56.0/25
+,"Bell Mobility, Inc.",67.69.69.0/24
+,"Bell Mobility, Inc.",67.69.76.0/24
+,Reliable-ISP,67.92.48.0/21
+,The Nest,68.180.20.0/24
+,PPPoX Pool - rback1.peoril-1161046261,68.23.148.0/22
+,"tzulo, inc.",68.235.32.0/19
+,Access Media Holdings LLC,68.64.194.0/28
+,WideOpenWest Finance LLC,69.14.0.0/16
+,WIDEOPENWEST MICHIGAN,69.14.162.0/24
+,MetroNet Carrier Grade NAT Pool,69.174.149.0/26
+,TDS TELECOM,69.21.0.0/16
+,Sunesys LLC,69.25.150.0/23
+,"Towerstream I, Inc.",69.38.128.0/17
+,Purdue University Northwest,69.51.160.0/19
+,John Companies,69.55.224.0/20
+,Incarnate Word University,69.80.144.0/20
+,PPPoX Pool - Rback21.emhril,70.131.144.0/20
+,Nomad Digital Ltd.,70.42.157.0/24
+,Charter Communications Inc,70.60.0.0/14
+,CALTHERM CORPORATION,70.91.212.0/29
+,Bright Light Radiology,70.91.240.0/29
+,TRINITY SERVICES-JOLIET,70.91.241.0/29
+,"Huron Consulting Group, Inc.",72.10.176.0/20
+,Puerto Rico Telephone Company,72.50.0.0/17
+,WESTIN OHARE,74.10.107.0/24
+,"Midwest Telecom of America, Inc",74.114.232.0/21
+,Total Server Solutions L.L.C.,74.119.146.0/24
+,Active Visions,74.119.159.0/28
+,Classified Ventures,74.119.96.0/22
+,WideOpenWest Finance LLC,74.199.0.0/17
+,Windsor Outdoor,74.222.43.0/29
+,"CBEYOND COMMUNICATIONS, LLC",74.7.0.0/16
+,PCM Sales/ Equinix Data Center,74.85.109.0/29
+,CHAPAL HOME OFFICE,74.93.68.0/29
+,INSTANT WHIP,74.93.82.0/29
+,Depaul University,75.102.192.0/18
+,PPPoX Pool rback26.chcgil 012607 0440,76.193.176.0/21
+,SoNo Condominium Association,76.8.94.0/24
+,RIPE Network Coordination Centre,78.0.0.0/8
+,RIPE Network Coordination Centre,89.0.0.0/8
+,RIPE Network Coordination Centre,91.0.0.0/8
+,RIPE Network Coordination Centre,92.0.0.0/8
+,WideOpenWest Finance LLC,96.27.0.0/16
+,Education Networks of America,96.4.0.0/15
+,KSCI TV,98.152.155.0/27
+,PPPoX Pool - CHCGIL Rback7,99.1.116.0/22
