@@ -7,7 +7,6 @@
 * https://www.crowncastle.com/infrastructure-solutions/?level=12&center=-87.61159,41.79914
 * CenturyLink / L3 -- http://www.centurylink-business.com/demos/network-maps.html#fiber
 * US Signal -- https://ussignal.com/network-map
-
 * Comcast -- no local map -- https://business.comcast.com/about-us/our-network
 * AT&T -- nill
 
