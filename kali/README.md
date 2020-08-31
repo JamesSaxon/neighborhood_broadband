@@ -23,7 +23,7 @@
 * Get the rpi4 64 bit Kali install from Offensive Security.
 * Use dd or etcher (lower stress!) to write the medium.
 * `sudo apt install sqlite3 kismet gpsd gpsd-clients`
-* Copy the `gpsd.conf` file to `/etc/defaults/gpsd`
+* Copy the `gpsd.conf` file to `/etc/default/gpsd`
   * Do `sudo systemctl stop gpsd.socket` and `sudo systemctl disable gpsd.socket`
   * Necessary?
 * Start it this time using `sudo gpsd /dev/ttyUSB0`
@@ -43,6 +43,7 @@
     ```
   * So we use Kismet.
 * In `/etc/kismet/kismet.conf` set the default device to `wlan1` and set the `gpsd` parameters (uncomment gpsd).
+* Add yourself (`kali`) to the kismet user group.
 * Then do `kismet -s` and check out the status of the new html gui at `localhost:2501`.  (Now go for a walk)
 * Finally, we can extract the data from the `Kismet*.kismet` file (actually just sqlite), using the [`kismet.sql`](kismet.sql) file, 
   or by running `kismetdb_to_wiglecsv -i Kismet-*.kismet -o kismet_wigle.csv`.
