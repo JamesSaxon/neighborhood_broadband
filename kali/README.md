@@ -48,7 +48,10 @@
     ```
   * So we use Kismet.
 * In `/etc/kismet/kismet.conf` set the default device to `wlan1` and set the `gpsd` parameters (uncomment gpsd).
-* Add yourself (`kali`) to the kismet user group.
+* Add yourself (`kali`) to the kismet user group:
+  ```
+  sudo usermod -a -G kismet kali
+  ```
 * Then do `kismet -s` and check out the status of the new html gui at `localhost:2501`.  (Now go for a walk)
 * Finally, we can extract the data from the `Kismet*.kismet` file (actually just sqlite), using the [`kismet.sql`](kismet.sql) file, 
   or by running `kismetdb_to_wiglecsv -i Kismet-*.kismet -o kismet_wigle.csv`.
