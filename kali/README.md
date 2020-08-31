@@ -32,7 +32,7 @@
   * Do `sudo systemctl stop gpsd.socket` and `sudo systemctl disable gpsd.socket`
   * Necessary?
 * Start it this time using `sudo gpsd /dev/ttyUSB0`
-  * Test using `cpgs -s`.
+  * Test using `cgps -s`.
   * In the future, this should boot at launch if the USB is plugged in.
 * Use `airmon-ng check kill` to turn off services that interfere with scanning.
 * Try `sudo airodump-ng wlan1 -b abg -w piscan -e` to hop on A/B/G and write to `piscan-*`
