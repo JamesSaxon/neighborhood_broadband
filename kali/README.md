@@ -22,7 +22,12 @@
 
 * Get the rpi4 64 bit Kali install from Offensive Security.
 * Use dd or etcher (lower stress!) to write the medium.
-* `sudo apt install sqlite3 kismet gpsd gpsd-clients`
+* Update and isntall stuff:
+  ```
+  sudo rm /etc/apt/sources.list.d/re4son.list # GPG key fucked up
+  sudo apt update
+  sudo apt install sqlite3 kismet kismet-doc kismet-plugins gpsd gpsd-clients
+  ```
 * Copy the `gpsd.conf` file to `/etc/default/gpsd`
   * Do `sudo systemctl stop gpsd.socket` and `sudo systemctl disable gpsd.socket`
   * Necessary?
