@@ -22,12 +22,17 @@
 
 * Get the rpi4 64 bit Kali install from Offensive Security.
 * Use dd or etcher (lower stress!) to write the medium.
-* `sudo apt install sqlite3 kismet gpsd gpsd-clients`
-* Copy the `gpsd.conf` file to `/etc/defaults/gpsd`
+* Update and isntall stuff:
+  ```
+  sudo rm /etc/apt/sources.list.d/re4son.list # GPG key fucked up
+  sudo apt update
+  sudo apt install sqlite3 kismet kismet-doc kismet-plugins gpsd gpsd-clients
+  ```
+* Copy the `gpsd.conf` file to `/etc/default/gpsd`
   * Do `sudo systemctl stop gpsd.socket` and `sudo systemctl disable gpsd.socket`
   * Necessary?
 * Start it this time using `sudo gpsd /dev/ttyUSB0`
-  * Test using `cpgs -s`.
+  * Test using `cgps -s`.
   * In the future, this should boot at launch if the USB is plugged in.
 * Use `airmon-ng check kill` to turn off services that interfere with scanning.
 * Try `sudo airodump-ng wlan1 -b abg -w piscan -e` to hop on A/B/G and write to `piscan-*`
@@ -43,6 +48,10 @@
     ```
   * So we use Kismet.
 * In `/etc/kismet/kismet.conf` set the default device to `wlan1` and set the `gpsd` parameters (uncomment gpsd).
+* Add yourself (`kali`) to the kismet user group:
+  ```
+  sudo usermod -a -G kismet kali
+  ```
 * Then do `kismet -s` and check out the status of the new html gui at `localhost:2501`.  (Now go for a walk)
 * Finally, we can extract the data from the `Kismet*.kismet` file (actually just sqlite), using the [`kismet.sql`](kismet.sql) file, 
   or by running `kismetdb_to_wiglecsv -i Kismet-*.kismet -o kismet_wigle.csv`.
