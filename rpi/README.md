@@ -20,3 +20,6 @@ In order to watch consumption, we need to either mirror traffic over a switch, o
 Wifi/Kismet is less accurate for the activity of a single device, since we need to see all possible channels.
 Kismet could hop for us (in which case we'd miss in time), and tshark could listen to a single channel -- in which case we'd likely miss in frequency.
 Of course, you could watch your neighbors with Kismet, but let's not get into that.
+
+
+sudo rfkill block wifi
