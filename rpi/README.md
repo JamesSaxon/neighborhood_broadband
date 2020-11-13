@@ -44,6 +44,8 @@ git clone https://gist.github.com/JamesSaxon/a7ddb11d5fe78ab0f91c22500af13778 ne
 
 `cat` out `z_crontab` to check that each line works.  There are some hard links in there that I need to fix -- search for `jsaxon`.
 
+We should also make the `install` tag configurable to each device.
+
 
 ### Configure the switch (optional)
 
