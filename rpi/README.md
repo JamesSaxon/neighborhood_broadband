@@ -19,3 +19,4 @@ sudo apt install dnsutils dnsperf install iperf3 chromium-chromedriver tshark
 In order to watch consumption, we need to either mirror traffic over a switch, or sniff it over wifi.
 Wifi/Kismet is less accurate for the activity of a single device, since we need to see all possible channels.
 Kismet could hop for us (in which case we'd miss in time), and tshark could listen to a single channel -- in which case we'd likely miss in frequency.
+Of course, you could watch your neighbors with Kismet, but let's not get into that.
