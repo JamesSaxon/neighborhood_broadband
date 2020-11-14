@@ -46,6 +46,13 @@ git clone https://gist.github.com/JamesSaxon/a7ddb11d5fe78ab0f91c22500af13778 ne
 
 We should also make the `install` tag configurable to each device.
 
+You must also check `/etc/resolv.conf`.  Different OS's do this differently, and it may be symlinked to a system service.  We _could_ say that the 0 ms response times are "real," but lets instead point them to the router, so it actually gets resolved off-device -- that is, set it to: 
+
+```
+nameserver 192.168.1.1
+```
+or whatever your router is.
+
 
 ### Configure the switch (optional)
 
