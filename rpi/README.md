@@ -62,3 +62,25 @@ Kismet could hop for us (in which case we'd miss in time), and tshark could list
 Of course, you could watch your neighbors with Kismet, but let's not get into that.
 
 \[Instructions coming.\]
+
+### tshark
+
+```
+sudo apt install tshark
+sudo adduser jsaxon wireshark
+
+tshark -i eth0 -a duration:10 -w shark.pcap
+
+capinfos shark.pcap | grep Data
+```
+
+Alternatively, we could run tshark in ring mode, and then just pull of the stats...
+```
+tshark -r shark_00001_20201114024130.pcap -q -z io,stat,10 -z io,phs
+tshark -i eth0 -b files:5 -b duration:60 -q -w shark.pcap
+```
+This guy runs it as a [daemon](https://gist.github.com/sepastian/5d793612e7adf288712287899619f661), which is smart but might kill the microSD card and probably would not be able to keep up in terms of write -- better to keep to memory.
+
+
+Note -- `iftop` is also really nice, but _requires_ sudo, whereas tshark doesn't _really_.
+
