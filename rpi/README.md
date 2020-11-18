@@ -108,9 +108,15 @@ I don't want to write the capture file, because the microSD card probably can't 
 
 #### Wireless
 
+Using wireless, we are also "out of the path."  This requires two wireless antennas, to capture the 2.4 and 5 GHz bands, but we still risk missing packets if the AP is set to auto-select packets.  On the plus side, this could give us a direct measurement of spectrum congestion, or the activities of other people in the neighborhood, etc.  I used:
+* [Alfa AWUS036ACH](https://www.amazon.com/gp/product/B00VEEBOPG/) for 5 GHz and 
+* [AWUS036NEH](https://www.amazon.com/gp/product/B0035OCVO6/) for 2.4 GHz
+
 #### Software
 
 #### Router
+
+https://github.com/roblandry/pynetgear_enhanced
 
 In order to watch consumption, we need to either mirror traffic over a switch, or sniff it over wifi.
 Wifi/Kismet is less accurate for the activity of a single device, since we need to see all possible channels.
