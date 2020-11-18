@@ -117,6 +117,7 @@ sudo apt-get install dkms
 cd rtl8812au
 sudo make dkms_install
 ```
+The [driver for the 2.4 GHz antenna](https://github.com/art567/mt7601usta0) should be included in the kernel.
 Then you can set them to monitor and set the channels:
 ```
 sudo ip link set wlan1 down
