@@ -111,37 +111,61 @@ I don't want to write the capture file, because the microSD card probably can't 
 Using wireless, we are also "out of the path."  This requires two wireless antennas, to capture the 2.4 and 5 GHz bands, but we still risk missing packets if the AP is set to auto-select packets.  On the plus side, this could give us a direct measurement of spectrum congestion, or the activities of other people in the neighborhood, etc.  I used:
 * [Alfa AWUS036ACH](https://www.amazon.com/gp/product/B00VEEBOPG/) for 5 GHz and 
 * [AWUS036NEH](https://www.amazon.com/gp/product/B0035OCVO6/) for 2.4 GHz
+The former required me to install the driver from this [aircrack-ng repo](https://github.com/aircrack-ng/rtl8812au).
+```
+sudo apt-get install dkms
+cd rtl8812au
+sudo make dkms_install
+```
+Then you can set them to monitor and set the channels:
+```
+sudo ip link set wlan1 down
+sudo ip link set wlan2 down
+sudo iw dev wlan1 set type monitor
+sudo iw dev wlan2 set type monitor
+sudo iwconfig wlan1 channel 11
+sudo iwconfig wlan2 channel 157
+sudo ip link set wlan1 up
+sudo ip link set wlan2 up
+```
+
+Note that some of the programs will over-ride the channel.  I ultimately decided against Kismet, because I did not want to record the data, but to test, I set the relevant lines in my `/etc/kismet/kismet.conf` to
+```
+ncsource=wlan1:name=a2,hop=false,channel=11
+ncsource=wlan2:name=a5,hop=false,channel=157
+```
+(You may also want to do `airmon-ng check kill`, to get things running smoothly.)
+
+Anyway, then you can do
+```
+tshark -f "not broadcast and not multicast and (wlan src 10:0c:6b:62:59:e9 || wlan src 10:0c:6b:62:59:ea || wlan dst 10:0c:6b:62:59:e9 || wlan dst 10:0c:6b:62:59:ea)" -i wlan1 -i wlan2 -a duration:10
+```
+Just for kicks, note that you could do similar things with display filters
+```
+tshark -i wlan1 -f "not broadcast and not multicast" -i wlan2 -f "not broadcast and not multicast" -a duration:100 -Q -z conv,wlan,'wlan.fc.type == 2 && wlan.sa != th:em:ac:ad:dr:pi && wlan.da != th:em:ac:ad:dr:pi && other requirements ...'
+```
+
+or something equivalent with `airomon-ng` or `kismet`.  Then you can do 
+
 
 #### Software
 
+ARP spoofing is possibly the easiest and cheapest method, though Nick has warned about performance.  In my experience, my video chats were all fine when running through the pi.  In this case, the wireless router runs as a router, and we drop the Linksys router and the switch.  Then assuming you've installed dsniff, it's
+```
+echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+sudo arpspoof -i eth0 -t 192.168.1.1 192.168.1.9 >/dev/null 2>&1 > router_to_mac &
+sudo arpspoof -i eth0 -t 192.168.1.9 192.168.1.1 >/dev/null 2>&1 > mac_to_router &
+```
+Note that Danny Huang wrote an [ARP spoofing package](https://github.com/nyu-mlab/iot-inspector-client/blob/master/src/arp_spoof.py) in python, for IoT inspector.
+
 #### Router
 
-https://github.com/roblandry/pynetgear_enhanced
+The Netgear wireless router -- if it is _not_ set up as an AP -- also records consumption.  The [pynetgear_enhanced](https://github.com/roblandry/pynetgear_enhanced) exposes the API really nicely, and so from _within the LAN_ one can query consumption and number of devices.  The router stores consumption per day, week, and month, but it is "up to date" so trivial to keep track down to the minute.
 
-In order to watch consumption, we need to either mirror traffic over a switch, or sniff it over wifi.
-Wifi/Kismet is less accurate for the activity of a single device, since we need to see all possible channels.
-Kismet could hop for us (in which case we'd miss in time), and tshark could listen to a single channel -- in which case we'd likely miss in frequency.
-Of course, you could watch your neighbors with Kismet, but let's not get into that.
-
-\[Instructions coming.\]
-
-### tshark
-
-```
-sudo apt install tshark
-
-tshark -i eth0 -a duration:10 -w shark.pcap
-
-capinfos shark.pcap | grep Data
-```
-
-Alternatively, we could run tshark in ring mode, and then just pull of the stats...
-```
-tshark -r shark_00001_20201114024130.pcap -q -z io,stat,10 -z io,phs
-tshark -i eth0 -b files:5 -b duration:60 -q -w shark.pcap
-```
-This guy runs it as a [daemon](https://gist.github.com/sepastian/5d793612e7adf288712287899619f661), which is smart but might kill the microSD card and probably would not be able to keep up in terms of write -- better to keep to memory.
+The router even has consumption by device (if QoS is on), though this is not in the API (should verify that it's the API and not just the package that is missing it).
 
 
-Note -- `iftop` is also really nice, but _requires_ sudo, whereas tshark doesn't _really_.
+#### Other packages
+
+This guy runs `tshark` as a [daemon](https://gist.github.com/sepastian/5d793612e7adf288712287899619f661), which is smart but might kill the microSD card and probably would not be able to keep up in terms of write -- better to keep to memory.  `iftop` is also really nice, but _requires_ sudo, whereas tshark doesn't _really_.
 
