@@ -80,7 +80,7 @@ I should make the `install` tag configurable to each device.
 
 Most of the measurements are just active measurements from the pi, though the `arp` count watches locally.  Measuring consumption or looking at application performance requires us to intercept traffic in one way or another.  I've tried four strategies for this: (1) wired, (2) wireless, (3) software, and (4) router.  Each of these has advantages and disadvantages.  They all work fairly well
 
-#### Wired
+#### 1. Wired
 
 For the wired setup, we use a switch to mirror traffic to the pi.  This requires rather a lot of gear.  I have, sequences
 * [Netgear CM500 Cable Modem](https://www.amazon.com/gp/product/B06XH46MWW/)
@@ -106,7 +106,7 @@ tshark -f "not broadcast and not multicast and not (ip src 192.168.1.4 or ip dst
 ```
 I don't want to write the capture file, because the microSD card probably can't handle it (that was my most-common failure when war-driving).  So we keep it to memory.  The `io,stat,100` is just because `io,stat` requires an interval, so I make it longer than the duration (60 seconds).  I drop everything as a capture filter instead of as a display filter, which could do the same thing.
 
-#### Wireless
+#### 2. Wireless
 
 Using wireless, we are also "out of the path."  This requires two wireless antennas, to capture the 2.4 and 5 GHz bands, but we still risk missing packets if the AP is set to auto-select packets.  On the plus side, this could give us a direct measurement of spectrum congestion, or the activities of other people in the neighborhood, etc.  I used:
 * [Alfa AWUS036ACH](https://www.amazon.com/gp/product/B00VEEBOPG/) for 5 GHz and 
@@ -148,7 +148,7 @@ tshark -i wlan1 -f "not broadcast and not multicast" -i wlan2 -f "not broadcast 
 or something equivalent with `airomon-ng` or `kismet`.  Then you can do 
 
 
-#### Software
+#### 3. Software
 
 ARP spoofing is possibly the easiest and cheapest method, though Nick has warned about performance.  In my experience, my video chats were all fine when running through the pi.  In this case, the wireless router runs as a router, and we drop the Linksys router and the switch.  Then assuming you've installed dsniff, it's
 ```
@@ -158,7 +158,7 @@ sudo arpspoof -i eth0 -t 192.168.1.9 192.168.1.1 >/dev/null 2>&1 > mac_to_router
 ```
 Note that Danny Huang wrote an [ARP spoofing package](https://github.com/nyu-mlab/iot-inspector-client/blob/master/src/arp_spoof.py) in python, for IoT inspector.
 
-#### Router
+#### 4. Router
 
 The Netgear wireless router -- if it is _not_ set up as an AP -- also records consumption.  The [pynetgear_enhanced](https://github.com/roblandry/pynetgear_enhanced) exposes the API really nicely, and so from _within the LAN_ one can query consumption and number of devices.  The router stores consumption per day, week, and month, but it is "up to date" so trivial to keep track down to the minute.
 
