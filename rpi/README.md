@@ -82,7 +82,7 @@ Most of the measurements are just active measurements from the pi, though the `a
 
 #### Wired
 
-For the wired setup, we use a switch to mirror traffic to the pi.  This requires rather a lot of gear, actually.  I have:
+For the wired setup, we use a switch to mirror traffic to the pi.  This requires rather a lot of gear.  I have, sequences
 * [Netgear CM500 Cable Modem](https://www.amazon.com/gp/product/B06XH46MWW/)
 * [Linksys LRT214 Gigabit VPN Router](https://www.amazon.com/gp/product/B07P9SR8WB/) -- 4 LAN + WAN + DMZ
   * The TP-Link TL-R600VPN is cheaper, and probably a better choice; this is just what I had available.
@@ -92,8 +92,19 @@ For the wired setup, we use a switch to mirror traffic to the pi.  This requires
   ```
   
   Then you can log in and change the static IP of the switch.  (You'll come back to the same interface, to turn on port mirroring.
-* 
-* The pi
+* [NETGEAR Nighthawk Smart WiFi Router (R6900P)](https://www.amazon.com/gp/product/B07C65K9H9/) used in this case in "access point mode."  This is a great router -- the signal quality is excellent and it is easy to configure -- but it was really a pain to find this and get it working.  The setup wizard for the AP mode made the whole setup virtually unusuable several times.  So eventually I set it up as its own router (on `10.0.0.1`) and then moved it afterwards to the AP mode.  This is at "Advanced > Advanced Settings > Router / AP / Bridge Mode > AP Mode" and I did "Enable fixed IP settings" because it was driving me crazy to nmap to find my router.  The ethernet cable from the switch IS going into the "Internet" port (not one of the LAN ports).
+
+and of course also
+* The pi, also attached to the switch.  The ports for both the router and wifi AP are mirrored to the pi.
+
+This works great, though the internal limit of this system will be 1/2 Gbps.  But -- it's not in the path, and we know the switch can keep up.  
+
+Then, the command is something like
+
+```
+tshark -f "not broadcast and not multicast and not (ip src 192.168.1.4 or ip dst 192.168.1.4 or ip src 192.168.1.1 or ip dst 192.168.1.1)" -i eth0 -a duration:60 -Q -z io,stat,100 -z conv,ip 
+```
+I don't want to write the capture file, because the microSD card probably can't handle it (that was my most-common failure when war-driving).  So we keep it to memory.  The `io,stat,100` is just because `io,stat` requires an interval, so I make it longer than the duration (60 seconds).  I drop everything as a capture filter instead of as a display filter, which could do the same thing.
 
 #### Wireless
 
