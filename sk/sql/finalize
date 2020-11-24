@@ -1,0 +1,4 @@
+ALTER TABLE dlping DROP COLUMN location_id;
+ALTER TABLE dlping RENAME COLUMN unit_id TO unit;
+ALTER TABLE dlping ADD PRIMARY KEY (unit, dtime,target);
+
