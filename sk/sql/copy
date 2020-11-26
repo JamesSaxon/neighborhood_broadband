@@ -1,0 +1,18 @@
+\COPY dlping       FROM '/tmp/sk/curr_data/curr_dlping.csv'       WITH (FORMAT CSV, HEADER); 
+\COPY dns          FROM '/tmp/sk/curr_data/curr_dns.csv'          WITH (FORMAT CSV, HEADER); 
+\COPY httpget      FROM '/tmp/sk/curr_data/curr_httpget.csv'      WITH (FORMAT CSV, HEADER); 
+\COPY httpgetmt    FROM '/tmp/sk/curr_data/curr_httpgetmt.csv'    WITH (FORMAT CSV, HEADER); 
+\COPY httpgetmt6   FROM '/tmp/sk/curr_data/curr_httpgetmt6.csv'   WITH (FORMAT CSV, HEADER); 
+\COPY httppost     FROM '/tmp/sk/curr_data/curr_httppost.csv'     WITH (FORMAT CSV, HEADER); 
+\COPY httppostmt   FROM '/tmp/sk/curr_data/curr_httppostmt.csv'   WITH (FORMAT CSV, HEADER); 
+\COPY httppostmt6  FROM '/tmp/sk/curr_data/curr_httppostmt6.csv'  WITH (FORMAT CSV, HEADER); 
+\COPY netusage     FROM '/tmp/sk/curr_data/curr_netusage.csv'     WITH (FORMAT CSV, HEADER); 
+\COPY ping         FROM '/tmp/sk/curr_data/curr_ping.csv'         WITH (FORMAT CSV, HEADER); 
+\COPY udpcloss     FROM '/tmp/sk/curr_data/curr_udpcloss.csv'     WITH (FORMAT CSV, HEADER); 
+\COPY udpjitter    FROM '/tmp/sk/curr_data/curr_udpjitter.csv'    WITH (FORMAT CSV, HEADER); 
+\COPY udplatency   FROM '/tmp/sk/curr_data/curr_udplatency.csv'   WITH (FORMAT CSV, HEADER); 
+\COPY udplatency6  FROM '/tmp/sk/curr_data/curr_udplatency6.csv'  WITH (FORMAT CSV, HEADER); 
+\COPY ulping       FROM '/tmp/sk/curr_data/curr_ulping.csv'       WITH (FORMAT CSV, HEADER); 
+\COPY videostream  FROM '/tmp/sk/curr_data/curr_videostream.csv'  WITH (FORMAT CSV, HEADER); 
+\COPY webget       FROM '/tmp/sk/curr_data/curr_webget.csv'       WITH (FORMAT CSV, HEADER); 
+

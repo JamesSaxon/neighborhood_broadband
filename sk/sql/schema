@@ -1,0 +1,628 @@
+SET CLIENT_ENCODING TO UTF8;
+SET STANDARD_CONFORMING_STRINGS TO ON;
+BEGIN;
+
+DROP TABLE IF EXISTS dlping;
+CREATE TABLE dlping (
+  unit_id      INTEGER, 
+  dtime        TIMESTAMP, 
+  target       VARCHAR, 
+  rtt_avg      INTEGER, 
+  rtt_min      INTEGER, 
+  rtt_max      INTEGER, 
+  rtt_std      INTEGER, 
+  successes    SMALLINT, 
+  failiures    INTEGER, 
+  location_id  INTEGER
+); 
+
+DROP TABLE IF EXISTS dns;
+CREATE TABLE dns (
+  unit_id       INTEGER, 
+  dtime         TIMESTAMP, 
+  nameserver    VARCHAR, 
+  lookup_host   VARCHAR, 
+  response_ip   VARCHAR, 
+  rtt           INTEGER, 
+  successes     BOOL, 
+  failures      BOOL, 
+  location_id   INTEGER
+); 
+
+DROP TABLE IF EXISTS httpget;
+CREATE TABLE httpget (
+  unit_id             INTEGER, 
+  dtime               TIMESTAMP, 
+  target              VARCHAR, 
+  address             VARCHAR, 
+  fetch_time          INTEGER, 
+  bytes_total         INTEGER, 
+  bytes_sec           INTEGER, 
+  bytes_sec_interval  INTEGER, 
+  warmup_time         INTEGER, 
+  warmup_bytes        INTEGER, 
+  sequence            INTEGER, 
+  threads             INTEGER, 
+  successes           SMALLINT, 
+  failures            SMALLINT, 
+  location_id         INTEGER
+); 
+
+DROP TABLE IF EXISTS httpgetmt;
+CREATE TABLE httpgetmt (
+  unit_id             INTEGER, 
+  dtime               TIMESTAMP, 
+  target              VARCHAR, 
+  address             VARCHAR, 
+  fetch_time          INTEGER, 
+  bytes_total         INTEGER, 
+  bytes_sec           INTEGER, 
+  bytes_sec_interval  INTEGER, 
+  warmup_time         INTEGER, 
+  warmup_bytes        INTEGER, 
+  sequence            INTEGER, 
+  threads             INTEGER, 
+  successes           SMALLINT, 
+  failures            SMALLINT, 
+  location_id         INTEGER
+); 
+
+DROP TABLE IF EXISTS httppost;
+CREATE TABLE httppost (
+  unit_id             INTEGER, 
+  dtime               TIMESTAMP, 
+  target              VARCHAR, 
+  address             VARCHAR, 
+  fetch_time          INTEGER, 
+  bytes_total         INTEGER, 
+  bytes_sec           INTEGER, 
+  bytes_sec_interval  INTEGER, 
+  warmup_time         INTEGER, 
+  warmup_bytes        INTEGER, 
+  sequence            INTEGER, 
+  threads             INTEGER, 
+  successes           SMALLINT, 
+  failures            SMALLINT, 
+  location_id         INTEGER
+); 
+
+DROP TABLE IF EXISTS httppostmt;
+CREATE TABLE httppostmt (
+  unit_id             INTEGER, 
+  dtime               TIMESTAMP, 
+  target              VARCHAR, 
+  address             VARCHAR, 
+  fetch_time          INTEGER, 
+  bytes_total         INTEGER, 
+  bytes_sec           INTEGER, 
+  bytes_sec_interval  INTEGER, 
+  warmup_time         INTEGER, 
+  warmup_bytes        INTEGER, 
+  sequence            INTEGER, 
+  threads             INTEGER, 
+  successes           SMALLINT, 
+  failures            SMALLINT, 
+  location_id         INTEGER
+); 
+
+DROP TABLE IF EXISTS ping;
+CREATE TABLE ping (
+  unit_id      INTEGER, 
+  dtime        TIMESTAMP, 
+  target       VARCHAR, 
+  rtt_avg      INTEGER, 
+  rtt_min      INTEGER, 
+  rtt_max      INTEGER, 
+  rtt_std      INTEGER, 
+  successes    SMALLINT, 
+  failiures    INTEGER, 
+  location_id  INTEGER
+); 
+
+DROP TABLE IF EXISTS udpjitter;
+CREATE TABLE udpjitter (
+  unit_id            INTEGER, 
+  dtime              TIMESTAMP, 
+  target             VARCHAR, 
+  packet_size        INTEGER, 
+  stream_rate        INTEGER, 
+  duration           INTEGER, 
+  packets_up_sent    INTEGER, 
+  packets_down_sent  INTEGER, 
+  packets_up_recv    INTEGER, 
+  packets_down_recv  INTEGER, 
+  jitter_up          INTEGER, 
+  jitter_down        INTEGER, 
+  latency            INTEGER, 
+  successes          SMALLINT, 
+  failures           SMALLINT, 
+  location_id        INTEGER
+); 
+
+DROP TABLE IF EXISTS udplatency;
+CREATE TABLE udplatency (
+  unit_id      INTEGER, 
+  dtime        TIMESTAMP, 
+  target       VARCHAR, 
+  rtt_avg      INTEGER, 
+  rtt_min      INTEGER, 
+  rtt_max      INTEGER, 
+  rtt_std      INTEGER, 
+  successes    SMALLINT, 
+  failiures    INTEGER, 
+  location_id  INTEGER
+); 
+
+DROP TABLE IF EXISTS ulping;
+CREATE TABLE ulping (
+  unit_id      INTEGER, 
+  dtime        TIMESTAMP, 
+  target       VARCHAR, 
+  rtt_avg      INTEGER, 
+  rtt_min      INTEGER, 
+  rtt_max      INTEGER, 
+  rtt_std      INTEGER, 
+  successes    SMALLINT, 
+  failures     SMALLINT, 
+  location_id  INTEGER
+); 
+
+DROP TABLE IF EXISTS videostream;
+CREATE TABLE videostream (
+  unit_id           INTEGER, 
+  dtime             TIMESTAMP, 
+  target            VARCHAR, 
+  downthrpt         INTEGER, 
+  downjitter        INTEGER, 
+  latency           INTEGER, 
+  jitter            INTEGER, 
+  buffer_underruns  INTEGER, 
+  buffer_delay      INTEGER, 
+  buffer_filltime   INTEGER, 
+  duration          INTEGER, 
+  bitrate           INTEGER, 
+  buffer_size       INTEGER, 
+  successes         SMALLINT, 
+  failures          SMALLINT, 
+  location_id       INTEGER
+); 
+
+DROP TABLE IF EXISTS webget;
+CREATE TABLE webget (
+  unit_id             INTEGER, 
+  dtime               TIMESTAMP, 
+  target              VARCHAR, 
+  address             VARCHAR, 
+  fetch_time          INTEGER, 
+  bytes_total         INTEGER, 
+  bytes_sec           INTEGER, 
+  objects             INTEGER, 
+  threads             INTEGER, 
+  requests            INTEGER, 
+  connections         INTEGER, 
+  reused_connections  INTEGER, 
+  lookups             INTEGER, 
+  request_total_time  INTEGER, 
+  request_min_time    INTEGER, 
+  request_avg_time    INTEGER, 
+  request_max_time    INTEGER, 
+  ttfb_total_time     INTEGER, 
+  ttfb_min_time       INTEGER, 
+  ttfb_avg_time       INTEGER, 
+  ttfb_max_time       INTEGER, 
+  lookup_total_time   INTEGER, 
+  lookup_min_time     INTEGER, 
+  lookup_avg_time     INTEGER, 
+  lookup_max_time     INTEGER, 
+  successes           SMALLINT, 
+  failures            SMALLINT, 
+  location_id         INTEGER
+); 
+
+DROP TABLE IF EXISTS netusage;
+CREATE TABLE netusage (
+  unit_id       INTEGER, 
+  dtime         TIMESTAMP, 
+  wan_rx_bytes  BIGINT, 
+  wan_tx_bytes  BIGINT, 
+  sk_rx_bytes   BIGINT, 
+  sk_tx_bytes   BIGINT, 
+  location_id   INTEGER
+); 
+
+DROP TABLE IF EXISTS udpcloss;
+CREATE TABLE udpcloss (
+  unit_id       INTEGER, 
+  dtime         TIMESTAMP, 
+  duration      BIGINT, 
+  target        VARCHAR, 
+  address       VARCHAR, 
+  packets       INTEGER, 
+  location_id   INTEGER
+); 
+
+--- DROP TABLE IF EXISTS httpget6;
+--- CREATE TABLE httpget6 (
+---   unit_id             INTEGER, 
+---   dtime               TIMESTAMP, 
+---   target              VARCHAR, 
+---   address             VARCHAR, 
+---   fetch_time          INTEGER, 
+---   bytes_total         INTEGER, 
+---   bytes_sec           INTEGER, 
+---   bytes_sec_interval  INTEGER, 
+---   warmup_time         INTEGER, 
+---   warmup_bytes        INTEGER, 
+---   sequence            INTEGER, 
+---   threads             INTEGER, 
+---   successes           SMALLINT, 
+---   failures            SMALLINT, 
+---   location_id         INTEGER
+--- ); 
+
+DROP TABLE IF EXISTS httpgetmt6;
+CREATE TABLE httpgetmt6 (
+  unit_id             INTEGER, 
+  dtime               TIMESTAMP, 
+  target              VARCHAR, 
+  address             VARCHAR, 
+  fetch_time          INTEGER, 
+  bytes_total         INTEGER, 
+  bytes_sec           INTEGER, 
+  bytes_sec_interval  INTEGER, 
+  warmup_time         INTEGER, 
+  warmup_bytes        INTEGER, 
+  sequence            INTEGER, 
+  threads             INTEGER, 
+  successes           SMALLINT, 
+  failures            SMALLINT, 
+  location_id         INTEGER
+); 
+
+--- DROP TABLE IF EXISTS httppost6;
+--- CREATE TABLE httppost6 (
+---   unit_id             INTEGER, 
+---   dtime               TIMESTAMP, 
+---   target              VARCHAR, 
+---   address             VARCHAR, 
+---   fetch_time          INTEGER, 
+---   bytes_total         INTEGER, 
+---   bytes_sec           INTEGER, 
+---   bytes_sec_interval  INTEGER, 
+---   warmup_time         INTEGER, 
+---   warmup_bytes        INTEGER, 
+---   sequence            INTEGER, 
+---   threads             INTEGER, 
+---   successes           SMALLINT, 
+---   failures            SMALLINT, 
+---   location_id         INTEGER
+--- ); 
+
+DROP TABLE IF EXISTS httppostmt6;
+CREATE TABLE httppostmt6 (
+  unit_id              INTEGER, 
+  dtime                TIMESTAMP, 
+  target               VARCHAR, 
+  address              VARCHAR, 
+  fetch_time           INTEGER, 
+  bytes_total          INTEGER, 
+  bytes_sec            INTEGER, 
+  bytes_sec_interval   INTEGER, 
+  warmup_time          INTEGER, 
+  warmup_bytes         INTEGER, 
+  sequence             INTEGER, 
+  threads              INTEGER, 
+  successes            SMALLINT, 
+  failures             SMALLINT, 
+  location_id          INTEGER
+); 
+
+DROP TABLE IF EXISTS udplatency6;
+CREATE TABLE udplatency6 (
+  unit_id      INTEGER, 
+  dtime        TIMESTAMP, 
+  target       VARCHAR, 
+  rtt_avg      INTEGER, 
+  rtt_min      INTEGER, 
+  rtt_max      INTEGER, 
+  rtt_std      INTEGER, 
+  successes    SMALLINT, 
+  failiures    INTEGER, 
+  location_id  INTEGER
+);
+
+
+COMMENT ON TABLE  dlping                             IS 'Downstream latency under load';
+COMMENT ON COLUMN dlping.unit_id                     IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN dlping.dtime                       IS 'Time test finished in UTC';
+COMMENT ON COLUMN dlping.target                      IS 'Target hostname or IP address';
+COMMENT ON COLUMN dlping.rtt_avg                     IS 'Average RTT in microseconds';
+COMMENT ON COLUMN dlping.rtt_min                     IS 'Minimum RTT in microseconds';
+COMMENT ON COLUMN dlping.rtt_max                     IS 'Maximum RTT in microseconds';
+COMMENT ON COLUMN dlping.rtt_std                     IS 'Standard Deviation in Measured RTT in microseconds';
+COMMENT ON COLUMN dlping.successes                   IS 'Number of successes';
+COMMENT ON COLUMN dlping.failiures                   IS 'Number of failures';
+COMMENT ON COLUMN dlping.location_id                 IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  dns                                IS 'DNS resolution time and success/failure rate';
+COMMENT ON COLUMN dns.unit_id                        IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN dns.dtime                          IS 'Time test finished in UTC';
+COMMENT ON COLUMN dns.nameserver                     IS 'Nameserver used to handle the DNS request';
+COMMENT ON COLUMN dns.lookup_host                    IS 'Hostname to be resolved';
+COMMENT ON COLUMN dns.response_ip                    IS 'Field unused at present';
+COMMENT ON COLUMN dns.rtt                            IS 'DNS resolution time in microseconds';
+COMMENT ON COLUMN dns.successes                      IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN dns.failures                       IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN dns.location_id                    IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  httpget                            IS 'Download speed, IPv4, single TCP connection';
+COMMENT ON COLUMN httpget.unit_id                    IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN httpget.dtime                      IS 'Time test finished in UTC';
+COMMENT ON COLUMN httpget.target                     IS 'Target hostname or IP address';
+COMMENT ON COLUMN httpget.address                    IS 'The IP address of the server (resolved by the clients DNS)';
+COMMENT ON COLUMN httpget.fetch_time                 IS 'Time the test ran for in microseconds ';
+COMMENT ON COLUMN httpget.bytes_total                IS 'Total bytes downloaded across all connections';
+COMMENT ON COLUMN httpget.bytes_sec                  IS 'Running total of throughput, which is sum of speeds measured for each stream (in bytes/sec), from the start of the test to the current interval';
+COMMENT ON COLUMN httpget.bytes_sec_interval         IS 'Throughput at this specific interval (e.g. Throughput between 25-30 seconds)';
+COMMENT ON COLUMN httpget.warmup_time                IS 'Time consumed for all the TCP streams to arrive at optimal window size (Units: microseconds)';
+COMMENT ON COLUMN httpget.warmup_bytes               IS 'Bytes transferred for all the TCP streams during the warm-up phase.';
+COMMENT ON COLUMN httpget.sequence                   IS 'The interval that this row refers to (e.g. in the US, sequence=0 implies result is for 0-5 seconds of the test)';
+COMMENT ON COLUMN httpget.threads                    IS 'The number of concurrent TCP connections used in the test';
+COMMENT ON COLUMN httpget.successes                  IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN httpget.failures                   IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN httpget.location_id                IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  httpgetmt                          IS 'Download speed, IPv4, multiple concurrent TCP connections';
+COMMENT ON COLUMN httpgetmt.unit_id                  IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN httpgetmt.dtime                    IS 'Time test finished in UTC';
+COMMENT ON COLUMN httpgetmt.target                   IS 'Target hostname or IP address';
+COMMENT ON COLUMN httpgetmt.address                  IS 'The IP address of the server (resolved by the clients DNS)';
+COMMENT ON COLUMN httpgetmt.fetch_time               IS 'Time the test ran for in microseconds ';
+COMMENT ON COLUMN httpgetmt.bytes_total              IS 'Total bytes downloaded across all connections';
+COMMENT ON COLUMN httpgetmt.bytes_sec                IS 'Running total of throughput, which is sum of speeds measured for each stream (in bytes/sec), from the start of the test to the current interval';
+COMMENT ON COLUMN httpgetmt.bytes_sec_interval       IS 'Throughput at this specific interval (e.g. Throughput between 25-30 seconds)';
+COMMENT ON COLUMN httpgetmt.warmup_time              IS 'Time consumed for all the TCP streams to arrive at optimal window size (Units: microseconds)';
+COMMENT ON COLUMN httpgetmt.warmup_bytes             IS 'Bytes transferred for all the TCP streams during the warm-up phase.';
+COMMENT ON COLUMN httpgetmt.sequence                 IS 'The interval that this row refers to (e.g. in the US, sequence=0 implies result is for 0-5 seconds of the test)';
+COMMENT ON COLUMN httpgetmt.threads                  IS 'The number of concurrent TCP connections used in the test';
+COMMENT ON COLUMN httpgetmt.successes                IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN httpgetmt.failures                 IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN httpgetmt.location_id              IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  httppost                           IS 'Upload speed, IPv4, single TCP connection';
+COMMENT ON COLUMN httppost.unit_id                   IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN httppost.dtime                     IS 'Time test finished in UTC';
+COMMENT ON COLUMN httppost.target                    IS 'Target hostname or IP address';
+COMMENT ON COLUMN httppost.address                   IS 'The IP address of the server (resolved by the clients DNS)';
+COMMENT ON COLUMN httppost.fetch_time                IS 'Time the test ran for in microseconds ';
+COMMENT ON COLUMN httppost.bytes_total               IS 'Total bytes downloaded across all connections';
+COMMENT ON COLUMN httppost.bytes_sec                 IS 'Running total of throughput, which is sum of speeds measured for each stream (in bytes/sec), from the start of the test to the current interval';
+COMMENT ON COLUMN httppost.bytes_sec_interval        IS 'Throughput at this specific interval (e.g. Throughput between 25-30 seconds)';
+COMMENT ON COLUMN httppost.warmup_time               IS 'Time consumed for all the TCP streams to arrive at optimal window size (Units: microseconds)';
+COMMENT ON COLUMN httppost.warmup_bytes              IS 'Bytes transferred for all the TCP streams during the warm-up phase.';
+COMMENT ON COLUMN httppost.sequence                  IS 'The interval that this row refers to (e.g. in the US, sequence=0 implies result is for 0-5 seconds of the test)';
+COMMENT ON COLUMN httppost.threads                   IS 'The number of concurrent TCP connections used in the test';
+COMMENT ON COLUMN httppost.successes                 IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN httppost.failures                  IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN httppost.location_id               IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  httppostmt                         IS 'Upload speed, IPv4, multiple concurrent TCP connections';
+COMMENT ON COLUMN httppostmt.unit_id                 IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN httppostmt.dtime                   IS 'Time test finished in UTC';
+COMMENT ON COLUMN httppostmt.target                  IS 'Target hostname or IP address';
+COMMENT ON COLUMN httppostmt.address                 IS 'The IP address of the server (resolved by the clients DNS)';
+COMMENT ON COLUMN httppostmt.fetch_time              IS 'Time the test ran for in microseconds ';
+COMMENT ON COLUMN httppostmt.bytes_total             IS 'Total bytes downloaded across all connections';
+COMMENT ON COLUMN httppostmt.bytes_sec               IS 'Running total of throughput, which is sum of speeds measured for each stream (in bytes/sec), from the start of the test to the current interval';
+COMMENT ON COLUMN httppostmt.bytes_sec_interval      IS 'Throughput at this specific interval (e.g. Throughput between 25-30 seconds)';
+COMMENT ON COLUMN httppostmt.warmup_time             IS 'Time consumed for all the TCP streams to arrive at optimal window size (Units: microseconds)';
+COMMENT ON COLUMN httppostmt.warmup_bytes            IS 'Bytes transferred for all the TCP streams during the warm-up phase.';
+COMMENT ON COLUMN httppostmt.sequence                IS 'The interval that this row refers to (e.g. in the US, sequence=0 implies result is for 0-5 seconds of the test)';
+COMMENT ON COLUMN httppostmt.threads                 IS 'The number of concurrent TCP connections used in the test';
+COMMENT ON COLUMN httppostmt.successes               IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN httppostmt.failures                IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN httppostmt.location_id             IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  ping                               IS 'ICMP based ping latency';
+COMMENT ON COLUMN ping.unit_id                       IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN ping.dtime                         IS 'Time test finished in UTC';
+COMMENT ON COLUMN ping.target                        IS 'Target hostname or IP address';
+COMMENT ON COLUMN ping.rtt_avg                       IS 'Average RTT in microseconds';
+COMMENT ON COLUMN ping.rtt_min                       IS 'Minimum RTT in microseconds';
+COMMENT ON COLUMN ping.rtt_max                       IS 'Maximum RTT in microseconds';
+COMMENT ON COLUMN ping.rtt_std                       IS 'Standard Deviation in Measured RTT in microseconds';
+COMMENT ON COLUMN ping.successes                     IS 'Number of successes';
+COMMENT ON COLUMN ping.failiures                     IS 'Number of failures';
+COMMENT ON COLUMN ping.location_id                   IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  udpjitter                          IS 'VoIP UDP jitter and packet loss';
+COMMENT ON COLUMN udpjitter.unit_id                  IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN udpjitter.dtime                    IS 'Time test finished in UTC';
+COMMENT ON COLUMN udpjitter.target                   IS 'Target hostname or IP address';
+COMMENT ON COLUMN udpjitter.packet_size              IS 'Size of each UDP Datagram (Units: Bytes)';
+COMMENT ON COLUMN udpjitter.stream_rate              IS 'Rate at which the UDP stream is generated (Units: bits/sec)';
+COMMENT ON COLUMN udpjitter.duration                 IS 'Total duration of test (Units: microseconds)';
+COMMENT ON COLUMN udpjitter.packets_up_sent          IS 'Number of packets sent in Upstream (measured by client)';
+COMMENT ON COLUMN udpjitter.packets_down_sent        IS 'Number of packets sent in Downstream (measured by server)';
+COMMENT ON COLUMN udpjitter.packets_up_recv          IS 'Number of packets received in Upstream (measured by server)';
+COMMENT ON COLUMN udpjitter.packets_down_recv        IS 'Number of packets received in Downstream (measured by client)';
+COMMENT ON COLUMN udpjitter.jitter_up                IS 'Upstream Jitter measured (Units: microseconds)';
+COMMENT ON COLUMN udpjitter.jitter_down              IS 'Downstream Jitter measured (Units microseconds)';
+COMMENT ON COLUMN udpjitter.latency                  IS '99th percentile of round trip times for all packets';
+COMMENT ON COLUMN udpjitter.successes                IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN udpjitter.failures                 IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN udpjitter.location_id              IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  udplatency                         IS 'UDP latency and packet loss';
+COMMENT ON COLUMN udplatency.unit_id                 IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN udplatency.dtime                   IS 'Time test finished in UTC';
+COMMENT ON COLUMN udplatency.target                  IS 'Target hostname or IP address';
+COMMENT ON COLUMN udplatency.rtt_avg                 IS 'Average RTT in microseconds';
+COMMENT ON COLUMN udplatency.rtt_min                 IS 'Minimum RTT in microseconds';
+COMMENT ON COLUMN udplatency.rtt_max                 IS 'Maximum RTT in microseconds';
+COMMENT ON COLUMN udplatency.rtt_std                 IS 'Standard Deviation in Measured RTT in microseconds';
+COMMENT ON COLUMN udplatency.successes               IS 'Number of successes (note: use failures/(successes+failures)) for packet loss)';
+COMMENT ON COLUMN udplatency.failiures               IS 'Number of failures (packets lost)';
+COMMENT ON COLUMN udplatency.location_id             IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  ulping                             IS 'Upstream latency under load';
+COMMENT ON COLUMN ulping.unit_id                     IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN ulping.dtime                       IS 'Time test finished in UTC';
+COMMENT ON COLUMN ulping.target                      IS 'Target hostname or IP address';
+COMMENT ON COLUMN ulping.rtt_avg                     IS 'Average RTT in microseconds';
+COMMENT ON COLUMN ulping.rtt_min                     IS 'Minimum RTT in microseconds';
+COMMENT ON COLUMN ulping.rtt_max                     IS 'Maximum RTT in microseconds';
+COMMENT ON COLUMN ulping.rtt_std                     IS 'Standard Deviation in Measured RTT in microseconds';
+COMMENT ON COLUMN ulping.successes                   IS 'Number of successes';
+COMMENT ON COLUMN ulping.failures                    IS 'Number of failures';
+COMMENT ON COLUMN ulping.location_id                 IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  videostream                        IS 'Simulated video streaming';
+COMMENT ON COLUMN videostream.unit_id                IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN videostream.dtime                  IS 'Time test finished in UTC';
+COMMENT ON COLUMN videostream.target                 IS 'Hostname of server';
+COMMENT ON COLUMN videostream.downthrpt              IS 'This metric records the average downstream throughput for the entire duration of the test. This average is calculated by taking the mean average of the speed of completing each of the blocks downloaded (as specified with the –css client parameter) in bytes/sec';
+COMMENT ON COLUMN videostream.downjitter             IS 'A measure of the standard deviation of the speed each block was downloaded at in microseconds';
+COMMENT ON COLUMN videostream.latency                IS 'The mean of all of the ping round-trip-times sent from client to server in microseconds';
+COMMENT ON COLUMN videostream.jitter                 IS 'The standard deviation of the ping round-trip-times sent from client to server in microseconds';
+COMMENT ON COLUMN videostream.buffer_underruns       IS 'This metric records how many times the buffer was completely drained (i.e. the client could not receive data at the desired downstream rate, so the buffer emptied). A good connection will have zero buffer underruns.';
+COMMENT ON COLUMN videostream.buffer_delay           IS 'The total time in microseconds that the client spent waiting for the buffer to reach its minimum size';
+COMMENT ON COLUMN videostream.buffer_filltime        IS 'The total time in microseconds to fill the buffer';
+COMMENT ON COLUMN videostream.duration               IS 'Duration of the test in microseconds';
+COMMENT ON COLUMN videostream.bitrate                IS 'Stream rate in bytes/sec';
+COMMENT ON COLUMN videostream.buffer_size            IS 'Buffer size used in bytes';
+COMMENT ON COLUMN videostream.successes              IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN videostream.failures               IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN videostream.location_id            IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  webget                             IS 'Web browsing performance';
+COMMENT ON COLUMN webget.unit_id                     IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN webget.dtime                       IS 'Time test finished in UTC';
+COMMENT ON COLUMN webget.target                      IS 'URL to fetch';
+COMMENT ON COLUMN webget.address                     IS 'IP address connected to to fetch content from initial URL';
+COMMENT ON COLUMN webget.fetch_time                  IS 'Sum of time consumed to download Html content and then concurrently download all resources (Units: micorsecounds)';
+COMMENT ON COLUMN webget.bytes_total                 IS 'Sum of HTML content size and all resources size (Units : Bytes)';
+COMMENT ON COLUMN webget.bytes_sec                   IS 'Average speed of downloading HTML content and then concurrently downloading all resources (Units: bytes/sec)';
+COMMENT ON COLUMN webget.objects                     IS 'Number of Resources (images, css etc) downloaded';
+COMMENT ON COLUMN webget.threads                     IS 'Maximum number of concurrent threads allowed';
+COMMENT ON COLUMN webget.requests                    IS 'Total number of HTTP requests made';
+COMMENT ON COLUMN webget.connections                 IS 'Total number of TCP connections established';
+COMMENT ON COLUMN webget.reused_connections          IS 'Number of TCP connections re-used';
+COMMENT ON COLUMN webget.lookups                     IS 'Number of DNS lookups performed';
+COMMENT ON COLUMN webget.request_total_time          IS 'Total duration of all requests summed together, if made sequentially';
+COMMENT ON COLUMN webget.request_min_time            IS 'Shortest request duration';
+COMMENT ON COLUMN webget.request_avg_time            IS 'Average request duration';
+COMMENT ON COLUMN webget.request_max_time            IS 'Longest request duration';
+COMMENT ON COLUMN webget.ttfb_total_time             IS 'Total duration of the time-to-first-byte summed together, if made sequentially';
+COMMENT ON COLUMN webget.ttfb_min_time               IS 'Shortest time-to-first-byte duration';
+COMMENT ON COLUMN webget.ttfb_avg_time               IS 'Average time-to-first-byte duration';
+COMMENT ON COLUMN webget.ttfb_max_time               IS 'Longest time-to-first-byte duration';
+COMMENT ON COLUMN webget.lookup_total_time           IS 'Total duration of all DNS lookups summed together, if made sequentially';
+COMMENT ON COLUMN webget.lookup_min_time             IS 'Shortest DNS lookup duration';
+COMMENT ON COLUMN webget.lookup_avg_time             IS 'Average DNS lookup duration';
+COMMENT ON COLUMN webget.lookup_max_time             IS 'Longest DNS lookup duration';
+COMMENT ON COLUMN webget.successes                   IS 'Number of successes';
+COMMENT ON COLUMN webget.failures                    IS 'Number of failures';
+COMMENT ON COLUMN webget.location_id                 IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  netusage                           IS 'Customer data usage';
+COMMENT ON COLUMN netusage.unit_id                   IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN netusage.dtime                     IS 'Time test finished in UTC';
+COMMENT ON COLUMN netusage.wan_rx_bytes              IS 'Total bytes recevied via the WAN interface on the unit (incl. Ethernet/IP headers)';
+COMMENT ON COLUMN netusage.wan_tx_bytes              IS 'Total bytes transmitted via the WAN interface on the unit (incl. Ethernet/IP headers)';
+COMMENT ON COLUMN netusage.sk_rx_bytes               IS 'Bytes received as a result of active performance measurements';
+COMMENT ON COLUMN netusage.sk_tx_bytes               IS 'Bytes transmitted as a result of active performance measurements';
+COMMENT ON COLUMN netusage.location_id               IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  udpcloss                           IS 'Contiguous UDP packet loss (disconnections/outage detection)';
+COMMENT ON COLUMN udpcloss.unit_id                   IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN udpcloss.dtime                     IS 'Time test finished in UTC';
+COMMENT ON COLUMN udpcloss.duration                  IS 'The duration of the outage/disconnection event in microseconds';
+COMMENT ON COLUMN udpcloss.target                    IS 'The hostname we experienced the outage to';
+COMMENT ON COLUMN udpcloss.address                   IS 'The IP address of the host we experienced the outage to';
+COMMENT ON COLUMN udpcloss.packets                   IS 'The number of packets we lost';
+COMMENT ON COLUMN udpcloss.location_id               IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+-- COMMENT ON TABLE  httpget6                           IS 'Download speed, IPv6, single TCP connection';
+-- COMMENT ON COLUMN httpget6.unit_id                   IS 'Unique identifier for an individual unit';
+-- COMMENT ON COLUMN httpget6.dtime                     IS 'Time test finished in UTC';
+-- COMMENT ON COLUMN httpget6.target                    IS 'Target hostname or IP address';
+-- COMMENT ON COLUMN httpget6.address                   IS 'The IP address of the server (resolved by the clients DNS)';
+-- COMMENT ON COLUMN httpget6.fetch_time                IS 'Time the test ran for in microseconds ';
+-- COMMENT ON COLUMN httpget6.bytes_total               IS 'Total bytes downloaded across all connections';
+-- COMMENT ON COLUMN httpget6.bytes_sec                 IS 'Running total of throughput, which is sum of speeds measured for each stream (in bytes/sec), from the start of the test to the current interval';
+-- COMMENT ON COLUMN httpget6.bytes_sec_interval        IS 'Throughput at this specific interval (e.g. Throughput between 25-30 seconds)';
+-- COMMENT ON COLUMN httpget6.warmup_time               IS 'Time consumed for all the TCP streams to arrive at optimal window size (Units: microseconds)';
+-- COMMENT ON COLUMN httpget6.warmup_bytes              IS 'Bytes transferred for all the TCP streams during the warm-up phase.';
+-- COMMENT ON COLUMN httpget6.sequence                  IS 'The interval that this row refers to (e.g. in the US, sequence=0 implies result is for 0-5 seconds of the test)';
+-- COMMENT ON COLUMN httpget6.threads                   IS 'The number of concurrent TCP connections used in the test';
+-- COMMENT ON COLUMN httpget6.successes                 IS 'Number of successes (always 1 or 0 for this test)';
+-- COMMENT ON COLUMN httpget6.failures                  IS 'Number of failures (always 1 or 0 for this test)';
+-- COMMENT ON COLUMN httpget6.location_id               IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  httpgetmt6                         IS 'Download speed, IPv6, multiple concurrent TCP connections';
+COMMENT ON COLUMN httpgetmt6.unit_id                 IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN httpgetmt6.dtime                   IS 'Time test finished in UTC';
+COMMENT ON COLUMN httpgetmt6.target                  IS 'Target hostname or IP address';
+COMMENT ON COLUMN httpgetmt6.address                 IS 'The IP address of the server (resolved by the clients DNS)';
+COMMENT ON COLUMN httpgetmt6.fetch_time              IS 'Time the test ran for in microseconds ';
+COMMENT ON COLUMN httpgetmt6.bytes_total             IS 'Total bytes downloaded across all connections';
+COMMENT ON COLUMN httpgetmt6.bytes_sec               IS 'Running total of throughput, which is sum of speeds measured for each stream (in bytes/sec), from the start of the test to the current interval';
+COMMENT ON COLUMN httpgetmt6.bytes_sec_interval      IS 'Throughput at this specific interval (e.g. Throughput between 25-30 seconds)';
+COMMENT ON COLUMN httpgetmt6.warmup_time             IS 'Time consumed for all the TCP streams to arrive at optimal window size (Units: microseconds)';
+COMMENT ON COLUMN httpgetmt6.warmup_bytes            IS 'Bytes transferred for all the TCP streams during the warm-up phase.';
+COMMENT ON COLUMN httpgetmt6.sequence                IS 'The interval that this row refers to (e.g. in the US, sequence=0 implies result is for 0-5 seconds of the test)';
+COMMENT ON COLUMN httpgetmt6.threads                 IS 'The number of concurrent TCP connections used in the test';
+COMMENT ON COLUMN httpgetmt6.successes               IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN httpgetmt6.failures                IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN httpgetmt6.location_id             IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+-- COMMENT ON TABLE  httppost6                          IS 'Upload speed, IPv6, single TCP connection';
+-- COMMENT ON COLUMN httppost6.unit_id                  IS 'Unique identifier for an individual unit';
+-- COMMENT ON COLUMN httppost6.dtime                    IS 'Time test finished in UTC';
+-- COMMENT ON COLUMN httppost6.target                   IS 'Target hostname or IP address';
+-- COMMENT ON COLUMN httppost6.address                  IS 'The IP address of the server (resolved by the clients DNS)';
+-- COMMENT ON COLUMN httppost6.fetch_time               IS 'Time the test ran for in microseconds ';
+-- COMMENT ON COLUMN httppost6.bytes_total              IS 'Total bytes downloaded across all connections';
+-- COMMENT ON COLUMN httppost6.bytes_sec                IS 'Running total of throughput, which is sum of speeds measured for each stream (in bytes/sec), from the start of the test to the current interval';
+-- COMMENT ON COLUMN httppost6.bytes_sec_interval       IS 'Throughput at this specific interval (e.g. Throughput between 25-30 seconds)';
+-- COMMENT ON COLUMN httppost6.warmup_time              IS 'Time consumed for all the TCP streams to arrive at optimal window size (Units: microseconds)';
+-- COMMENT ON COLUMN httppost6.warmup_bytes             IS 'Bytes transferred for all the TCP streams during the warm-up phase.';
+-- COMMENT ON COLUMN httppost6.sequence                 IS 'The interval that this row refers to (e.g. in the US, sequence=0 implies result is for 0-5 seconds of the test)';
+-- COMMENT ON COLUMN httppost6.threads                  IS 'The number of concurrent TCP connections used in the test';
+-- COMMENT ON COLUMN httppost6.successes                IS 'Number of successes (always 1 or 0 for this test)';
+-- COMMENT ON COLUMN httppost6.failures                 IS 'Number of failures (always 1 or 0 for this test)';
+-- COMMENT ON COLUMN httppost6.location_id              IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  httppostmt6                        IS 'Upload speed, IPv6, multiple concurrent TCP connections';
+COMMENT ON COLUMN httppostmt6.unit_id                IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN httppostmt6.dtime                  IS 'Time test finished in UTC';
+COMMENT ON COLUMN httppostmt6.target                 IS 'Target hostname or IP address';
+COMMENT ON COLUMN httppostmt6.address                IS 'The IP address of the server (resolved by the clients DNS)';
+COMMENT ON COLUMN httppostmt6.fetch_time             IS 'Time the test ran for in microseconds ';
+COMMENT ON COLUMN httppostmt6.bytes_total            IS 'Total bytes downloaded across all connections';
+COMMENT ON COLUMN httppostmt6.bytes_sec              IS 'Running total of throughput, which is sum of speeds measured for each stream (in bytes/sec), from the start of the test to the current interval';
+COMMENT ON COLUMN httppostmt6.bytes_sec_interval     IS 'Throuput at this specific interval (e.g. Throughput between 25-30 seconds)';
+COMMENT ON COLUMN httppostmt6.warmup_time            IS 'Time consumed for all the TCP streams to arrive at optimal window size (Units: microseconds)';
+COMMENT ON COLUMN httppostmt6.warmup_bytes           IS 'Bytes transferred for all the TCP streams during the warm-up phase.';
+COMMENT ON COLUMN httppostmt6.sequence               IS 'The interval that this row refers to (e.g. in the US, sequence=0 implies result is for 0-5 seconds of the test)';
+COMMENT ON COLUMN httppostmt6.threads                IS 'The number of concurrent TCP connections used in the test';
+COMMENT ON COLUMN httppostmt6.successes              IS 'Number of successes (always 1 or 0 for this test)';
+COMMENT ON COLUMN httppostmt6.failures               IS 'Number of failures (always 1 or 0 for this test)';
+COMMENT ON COLUMN httppostmt6.location_id            IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMENT ON TABLE  udplatency6                        IS 'UDP latency and packet loss (IPv6)';
+COMMENT ON COLUMN udplatency6.unit_id                IS 'Unique identifier for an individual unit';
+COMMENT ON COLUMN udplatency6.dtime                  IS 'Time test finished in UTC';
+COMMENT ON COLUMN udplatency6.target                 IS 'Target hostname or IP address';
+COMMENT ON COLUMN udplatency6.rtt_avg                IS 'Average RTT in microseconds';
+COMMENT ON COLUMN udplatency6.rtt_min                IS 'Minimum RTT in microseconds';
+COMMENT ON COLUMN udplatency6.rtt_max                IS 'Maximum RTT in microseconds';
+COMMENT ON COLUMN udplatency6.rtt_std                IS 'Standard Deviation in Measured RTT in microseconds';
+COMMENT ON COLUMN udplatency6.successes              IS 'Number of successes (note: use failures/(successes+failures)) for packet loss)';
+COMMENT ON COLUMN udplatency6.failiures              IS 'Number of failures (packets lost)';
+COMMENT ON COLUMN udplatency6.location_id            IS 'Please ignore (this is an internal key mapping to unit profile data)';
+
+COMMIT;
+
+
