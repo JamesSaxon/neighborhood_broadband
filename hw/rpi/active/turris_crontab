@@ -1,5 +1,0 @@
-# m          h  dom mon dow command
- 3-29,33-59  *   *   *   *  /root/netrics/net_measures.py -T -p -d -n -t > /root/netrics/net_measures.sub 2>&1
-*/5          *   *   *   *  /root/netrics/net_measures.py -T -c          > /root/netrics/net_consumption.sub 2>&1
- 0           *   *   *   *  /root/netrics/net_measures.py -T -s          > /root/netrics/net_speed.sub 2>&1
- 30          *   *   *   *  /root/netrics/net_measures.py -T -i --udp_dl 120 --udp_ul 25

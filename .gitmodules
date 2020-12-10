@@ -1,0 +1,3 @@
+[submodule "hw/rpi/netrics"]
+	path = hw/rpi/netrics
+	url = https://github.com/JamesSaxon/netrics/
