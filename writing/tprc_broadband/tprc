@@ -26,11 +26,11 @@ Unfortunately, subtlety is not required:
 In Chicago for instance, the tract-level correlation between 
   log median household income and 
   the share of households with a broadband contract is 0.82,
-  as can be seen in Figure~.
+  as can be seen in Figure~\ref{fig:chicago_broadband_income}.
 The CPS/NTIA data are not designed for use below the state-level,
   but microdata allow breakdowns by race, ethnicity, and poverty status.\footnote{Nick: Let me know if this would be helpful, and I can get \href{https://github.com/JamesSaxon/neighborhood\_broadband/blob/master/census/ipums.ipynb}{these tables} into \LaTeX.}
 
-broadband_income.pdf; Census tract median household income versus share of households with broadband Internet, in Chicago.  A lowess curve is drawn. The linear correlation is 0.82.
+broadband_income.pdf; Census tract median household income versus share of households with broadband Internet, in Chicago.  A lowess curve is drawn. The linear correlation is 0.82. \label{fig:chciago_broadband_income}
 
 Still, objective measures of real-world performance
   could shed light on differences in online behaviors or 
@@ -47,7 +47,7 @@ While no demographic indicators are provided,
   block group or tract of residence is available for 94\% of the households included in the 2018 report.
 If we aggregate block groups to the tracts that contain them,
   we can compare tract median household income between SamKnows residences
-  to the American population.
+  to the American population (Figure~\ref{fig:rep_mhi}).
 This reveals a significant offset:
   a log diference of 0.13, implying incomes $14$\% higher in SamKnows ``neighborhoods."
 
@@ -74,7 +74,7 @@ In short, both state-of-the-art
   are systematically blind to vulnerable populations, 
   who do not run speedtests or volunteer for FCC measurements.
 
-rep_mhi_ookla_chicago.pdf Ookla / Chicago; rep_mhi_sk_us.pdf SamKnows / US; Normalized distribution of Census tract median household income, weighted population counts, or for Ookla devices or SamKnows WhiteBox households.  The dotted lines weight Census populations by the share of neighborhood households with a broadband Internet contract.
+rep_mhi_ookla_chicago.pdf Ookla / Chicago; rep_mhi_sk_us.pdf SamKnows / US; Normalized distribution of Census tract median household income, weighted population counts, or for Ookla devices or SamKnows WhiteBox households.  The dotted lines weight Census populations by the share of neighborhood households with a broadband Internet contract. \label{fig:rep_mhi}
 
 Though we emphasize the significant limitations of the data,
   it \emph{is} possible to contrast performance over the course of the 
@@ -86,19 +86,19 @@ We then plot consumption and speed over time.
 Within each income group,
   we plot the 1st quartile, median, and 3rd quartile 
   of the distribution, from November 2019 until the most-recent release, August 2020.
-These are shown in Figure~.
+These are shown in Figure~\ref{fig:sk_bandwidth}.
 Conditional on \emph{having Internet}, 
   households from wealthy neighborhoods do in fact purchase higher-bandwidth plans.
-On the other hand, it is somewhat surprising to find that 
+On the other hand, it is somewhat surprising to find in Figure~\ref{fig:sk_consumption}
   from the perspective of consumption -- gigabytes per day -- 
   households in lower income communities tend to use moderately \emph{more}
   Internet, across the distribution (i.e., at all three quartiles).
-We consider these results inconclusive given the data,
+These results remain somewhat inconclusive given the limitations of the data,
   but they underscore the need for demographically-attuned 
   measurement of Internet performance and use.
 
-sk_bandwidth.pdf:0.7 Bandwidth measured by SamKnows data for low (first-quartile), medium (middle quartiles), and high-income tracts.  Quartiles are of the SamKnows population.  For each segment of the population the three lines show the first, second and third quartiles of bandwidth.
-sk_consumption.pdf:1.0; Received and transmitted data, measured by SamKnows for low (first-quartile), medium (middle quartiles), and high-income tracts.  Quartiles are of the SamKnows population.  For each segment of the population the three lines show the first, second and third quartiles of consumption by day.
+sk_bandwidth.pdf:0.7 Bandwidth measured by SamKnows data for low (first-quartile), medium (middle quartiles), and high-income tracts.  Quartiles are of the SamKnows population.  For each segment of the population the three lines show the first, second and third quartiles of bandwidth. \label{fig:sk_bandwidth}
+sk_consumption.pdf:1.0; Received and transmitted data, measured by SamKnows for low (first-quartile), medium (middle quartiles), and high-income tracts.  Quartiles are of the SamKnows population.  For each segment of the population the three lines show the first, second and third quartiles of consumption by day. \label{fig:sk_consumption}
 
 
 
