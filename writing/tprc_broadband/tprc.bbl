@@ -1,0 +1,14 @@
+\begin{thebibliography}{2}
+\providecommand{\enquote}[1]{``#1''}
+\providecommand{\url}[1]{{\tt #1}}
+\providecommand{\href}[2]{#2}
+
+
+\bibitem[1]{ookla}
+{Speedtest\textregistered by Ookla\textregistered}, \enquote{Global Fixed and Mobile Network Performance Maps.} \textit{Registry of Open Data on AWS}.  Accessed November 11, 2020. \href{https://registry.opendata.aws/speedtest-global-performance/}{\linklogo} Based on analysis by Ookla of Speedtest Intelligence\textregistered data for Q3 2020. Provided by Ookla.  Ookla trademarks used under license and reprinted with permission.
+
+\bibitem[2]{samknows}
+{Federal Communications Commission} 2016. \textit{2016 Technical Appendix: Measuring Broadband America / Fixed Broadband.}  (FCC Office of Engineering and Technology and Consumer and Governmental Affairs Bureau; Washington, DC). \href{https://data.fcc.gov/download/measuring-broadband-america/2016/Technical-Appendix-fixed-2016.pdf}{\linklogo}  
+
+
+\end{thebibliography}
