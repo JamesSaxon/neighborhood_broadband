@@ -3,7 +3,7 @@
 ^H: \usepackage{textcomp}
 ^H: \graphicspath{{figs/}}
 
-The coronavirus pandemic forced daily routines into the virtual spaces.
+The coronavirus pandemic forced daily routines into virtual spaces.
 As both work and learning went remote, policymakers around the country
   have sought to address ongoing inequities in Internet connectivity,
   suddenly more acute than ever.
@@ -30,7 +30,7 @@ In Chicago for instance, the tract-level correlation between
 The CPS/NTIA data are not designed for use below the state-level,
   but microdata allow breakdowns by race, ethnicity, and poverty status.\footnote{Nick: Let me know if this would be helpful, and I can get \href{https://github.com/JamesSaxon/neighborhood\_broadband/blob/master/census/ipums.ipynb}{these tables} into \LaTeX.}
 
-broadband_income.pdf; Census tract median household income versus share of households with broadband Internet, in Chicago.  A lowess curve is drawn. The linear correlation is 0.82. \label{fig:chciago_broadband_income}
+broadband_income.pdf; Census tract median household income versus share of households with broadband Internet, in Chicago.  A lowess curve is drawn. The linear correlation is 0.82. \label{fig:chicago_broadband_income}
 
 Still, objective measures of real-world performance
   could shed light on differences in online behaviors or 
