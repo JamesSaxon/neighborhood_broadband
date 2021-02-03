@@ -1,17 +1,50 @@
 #!/bin/bash 
 
-SPEEDS="10 5 2 1.75 1.50 1.25 1.1 1.0 0.9 0.8 0.7 0.6 0.5 0.25"
-SPEEDS="2.0 1.5 1.2 1.0 0.8 0.6"
-SPEEDS="1.5 1.2 1.0 0.8 0.6"
+SPEEDS="10.0 5.0 2.5 2.0 1.7 1.5 1.4 1.3 1.2 1.1 1.0 0.9 0.8 0.7 0.6 0.5 0.4"
+SPEEDS="10.0 5.0 2.5 2.0 1.7 1.5 1.4 1.3 1.2 1.1 1.0 0.9 0.8 0.7 0.6 0.5 0.4"
 
 SLEEP=300
 
 BURST=50kbit
 MAX_DELAY=20ms
 
-# IFACE=enx00e04c01598c
-IFACE=wlp59s0
+# enxcc483a9d3920 wlp59s0
+IFACE=$1
+# IFACE=enxcc483a9d3920
+# IFACE=wlp59s0
 VIRT=ifb0
+
+
+reset_interfaces() {
+
+  echo Resetting interfaces: $IFACE $VIRT
+
+  sudo tc qdisc del dev $IFACE ingress
+  sudo tc qdisc del dev $IFACE root
+  sudo tc qdisc del dev $VIRT root
+  sudo ip link set dev $VIRT down
+
+}
+
+
+create_interfaces() {
+
+  echo Creating ingress interface for $IFACE
+
+  # Create virtual interface
+  sudo modprobe ifb numifbs=1
+  sudo ip link set dev $VIRT up
+  
+  # Redirect all
+  sudo tc qdisc  add dev $IFACE handle ffff: ingress
+  sudo tc filter add dev $IFACE parent ffff: protocol ip u32 match u32 0 0 action mirred egress redirect dev $VIRT
+  
+  sudo tc qdisc  add dev $VIRT  root tbf rate 1000mbit burst 50kbit latency $MAX_DELAY
+  sudo tc qdisc  add dev $IFACE root tbf rate 1000mbit burst 50kbit latency $MAX_DELAY
+
+}
+
+
 
 replace_speed() {
 
@@ -27,6 +60,14 @@ replace_speed() {
 
 }
 
+
+# If there are no arguments, we will reset.
+# This obviates the need for replace etc.
+# So everything is clean if we just want to change.
+if [[ -n `ifconfig -s | grep ifb0` ]]; then reset_interfaces; fi
+
+# The re-create them.
+create_interfaces
 
 echo "dl,ul,ts" > speed_cycle.csv
 for s in ${SPEEDS}; do replace_speed ${s} 100; done

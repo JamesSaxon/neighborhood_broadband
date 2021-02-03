@@ -1,9 +1,13 @@
 #!/bin/bash 
 
-DL_SPEED=$1
-UL_SPEED=$2
+# wlp59s0 enxcc483a9d3920
+IFACE=$1
+VIRT=ifb0
 
-if [ "$#" -eq 1 ]; then 
+DL_SPEED=$2
+UL_SPEED=$3
+
+if [ "$#" -eq 2 ]; then 
   UL_SPEED=$DL_SPEED
 fi
 
@@ -12,10 +16,6 @@ BURST=50kbit
 # Careful -- of the meaning of the 
 #  "latency" in the tbf qdisc.
 MAX_DELAY=20ms
-
-IFACE=wlp59s0
-# IFACE=enx00e04c01598c
-VIRT=ifb0
 
 
 function reset_interfaces() {
@@ -55,7 +55,7 @@ if [[ -n `ifconfig -s | grep ifb0` ]]; then
   reset_interfaces
 fi
 
-if [ "$#" -gt 0 ]; then 
+if [ "$#" -gt 1 ]; then 
   set_speed
 fi
 
