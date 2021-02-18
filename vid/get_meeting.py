@@ -13,11 +13,14 @@ import time
 install_url = "https://zoom.us/oauth/authorize?response_type=code&client_id={}&redirect_uri={}"
 auth_url    = "https://zoom.us/oauth/token?grant_type=authorization_code&redirect_uri={}&code={}"
 refresh_url = "https://zoom.us/oauth/token?grant_type=refresh_token&refresh_token={}"
-meeting_url = "https://api.zoom.us/v2/past_meetings/{}/instances"
 
-# qos_url   = "https://api.zoom.us/v2/metrics/meetings/{}/participants/qos"     ##  All users
-qos_url     = "https://api.zoom.us/v2/metrics/meetings/{}/participants/{}/qos"  ##  Single user
-my_url      = "https://saxon.cdac.uchicago.edu/"
+user_url         = "https://api.zoom.us/v2/users/{}"
+meeting_url      = "https://api.zoom.us/v2/past_meetings/{}/instances"
+participants_url = "https://api.zoom.us/v2/metrics/meetings/{}/participants"
+
+# qos_url        = "https://api.zoom.us/v2/metrics/meetings/{}/participants/qos"     ##  All users
+qos_url          = "https://api.zoom.us/v2/metrics/meetings/{}/participants/{}/qos"  ##  Single user
+my_url           = "https://saxon.cdac.uchicago.edu/"
 
 
 def get_token_auth(code, token_cache):
@@ -61,16 +64,34 @@ def get_token_auth(code, token_cache):
     return token_auth
 
 
-def get_qos(code, token_cache, meeting, user_id, output):
+def get_qos(code, token_cache, meeting, user_email, output):
 
     token_auth = get_token_auth(code, token_cache)
+
+    j = requests.get(user_url.format(user_email), headers = token_auth).json()
+    user_id = j["id"]
 
     j = requests.get(meeting_url.format(meeting), headers = token_auth).json()
     meeting_uuid = j["meetings"][0]["uuid"]
     
-    query = {"page_size" : "10", "type" : "past"} # page_size only for *all* participants...
+    query = {"page_size" : "30", "type" : "past"} # page_size only for *all* participants...
+
+    j = requests.get(participants_url.format(meeting_uuid, user_id), headers = token_auth, params = query).json()
+
+    participant_id = None
+    for p in j["participants"]:
+
+        if not "id" in p: continue
+        if p["id"] != user_id: continue
+
+        participant_id = p["user_id"]
+        print(p)
+
+    if not participant_id:
+        print("participant {} not found in meeting".format(user_email))
+        sys.exit()
     
-    j = requests.get(qos_url.format(meeting_uuid, user_id), headers = token_auth, params = query).json()
+    j = requests.get(qos_url.format(meeting_uuid, participant_id), headers = token_auth, params = query).json()
     
     with open(output, "w") as out: json.dump(j, out)
 
@@ -81,7 +102,7 @@ if __name__ == "__main__":
     parser.add_argument("-c", "--code",    type = str, default = "")
     parser.add_argument("-m", "--meeting", type = int, required = True)
     parser.add_argument("-t", "--token_cache", type = str, default = "/tmp/zoom_token_video_analytics.json")
-    parser.add_argument("-u", "--user_id", type = int, default = 16787456) # Jamie
+    parser.add_argument("-u", "--user_email", type = str, default = "jsaxon@uchicago.edu") 
     parser.add_argument("-o", "--output", type = str, default = "meeting_metrics.json")
     args  = parser.parse_args()
 
