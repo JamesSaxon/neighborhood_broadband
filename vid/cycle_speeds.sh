@@ -55,7 +55,7 @@ replace_speed() {
   tc qdisc replace dev $VIRT  root tbf rate ${DL_SPEED}mbit burst 50kbit latency $MAX_DELAY
   tc qdisc replace dev $IFACE root tbf rate ${UL_SPEED}mbit burst 50kbit latency $MAX_DELAY
 
-  tcpdump -w pcap/${TS}
+  tcpdump -i $IFACE -w pcap/${TS}
 
 }
 
