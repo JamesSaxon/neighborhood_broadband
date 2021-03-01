@@ -1,7 +1,6 @@
 #!/bin/bash 
 
-SPEEDS="10.0 5.0 2.5 2.0 1.7 1.5 1.4 1.3 1.2 1.1 1.0 0.9 0.8 0.7 0.6 0.5 0.4"
-SPEEDS="10.0 5.0 2.5 2.0 1.7 1.5 1.4 1.3 1.2 1.1 1.0 0.9 0.8 0.7 0.6 0.5 0.4"
+SPEEDS="20.0 10.0 5.0 3.0 2.0 1.5 1.4 1.3 1.2 1.1 1.0 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2"
 
 SLEEP=300
 
@@ -56,7 +55,7 @@ replace_speed() {
   tc qdisc replace dev $VIRT  root tbf rate ${DL_SPEED}mbit burst 50kbit latency $MAX_DELAY
   tc qdisc replace dev $IFACE root tbf rate ${UL_SPEED}mbit burst 50kbit latency $MAX_DELAY
 
-  sleep $SLEEP
+  tcpdump -w pcap/${TS}
 
 }
 
@@ -70,7 +69,7 @@ if [[ -n `ifconfig -s | grep ifb0` ]]; then reset_interfaces; fi
 create_interfaces
 
 echo "dl,ul,ts" > speed_cycle.csv
-for s in ${SPEEDS}; do replace_speed ${s} 100; done
-for s in ${SPEEDS}; do replace_speed 100 ${s}; done
+for s in ${SPEEDS}; do replace_speed ${s} 100; sleep $SLEEP; done
+for s in ${SPEEDS}; do replace_speed 100 ${s}; sleep $SLEEP; done
 
 
