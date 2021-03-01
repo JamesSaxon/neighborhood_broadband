@@ -36,7 +36,8 @@ create_interfaces() {
   
   # Redirect all
   sudo tc qdisc  add dev $IFACE handle ffff: ingress
-  sudo tc filter add dev $IFACE parent ffff: protocol ip u32 match u32 0 0 action mirred egress redirect dev $VIRT
+  sudo tc filter add dev $IFACE parent ffff: protocol ip   u32 match u32 0 0 action mirred egress redirect dev $VIRT
+  sudo tc filter add dev $IFACE parent ffff: protocol ipv6 u32 match u32 0 0 action mirred egress redirect dev $VIRT
   
   sudo tc qdisc  add dev $VIRT  root tbf rate 1000mbit burst 50kbit latency $MAX_DELAY
   sudo tc qdisc  add dev $IFACE root tbf rate 1000mbit burst 50kbit latency $MAX_DELAY
