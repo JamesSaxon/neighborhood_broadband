@@ -9,6 +9,9 @@ import json
 import netrc
 import time
 
+from dateutil.parser import parse
+from pprint import pprint
+
 
 install_url = "https://zoom.us/oauth/authorize?response_type=code&client_id={}&redirect_uri={}"
 auth_url    = "https://zoom.us/oauth/token?grant_type=authorization_code&redirect_uri={}&code={}"
@@ -72,7 +75,9 @@ def get_qos(code, token_cache, meeting, user_email, output):
     user_id = j["id"]
 
     j = requests.get(meeting_url.format(meeting), headers = token_auth).json()
-    meeting_uuid = j["meetings"][0]["uuid"]
+    meetings = j["meetings"]
+    meetings.sort(key = lambda v: parse(v["start_time"]), reverse = True)
+    meeting_uuid = meetings[0]["uuid"]
     
     query = {"page_size" : "30", "type" : "past"} # page_size only for *all* participants...
 
@@ -85,7 +90,6 @@ def get_qos(code, token_cache, meeting, user_email, output):
         if p["id"] != user_id: continue
 
         participant_id = p["user_id"]
-        print(p)
 
     if not participant_id:
         print("participant {} not found in meeting".format(user_email))
@@ -101,7 +105,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = 'Meeting stats.')
     parser.add_argument("-c", "--code",    type = str, default = "")
     parser.add_argument("-m", "--meeting", type = int, required = True)
-    parser.add_argument("-t", "--token_cache", type = str, default = "/tmp/zoom_token_video_analytics.json")
+    parser.add_argument("-t", "--token_cache", type = str, default = "zoom_token_video_analytics.json")
     parser.add_argument("-u", "--user_email", type = str, default = "jsaxon@uchicago.edu") 
     parser.add_argument("-o", "--output", type = str, default = "meeting_metrics.json")
     args  = parser.parse_args()
